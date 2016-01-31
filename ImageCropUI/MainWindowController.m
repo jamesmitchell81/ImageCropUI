@@ -46,6 +46,9 @@
 {
     image = [dropZoneView image];
     
+    // resize the image to fit the view?
+    // or resize the window to fit the view.
+    
     // remove containerView subview.
     [dropZoneView removeFromSuperview];
     
