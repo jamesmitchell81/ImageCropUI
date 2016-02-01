@@ -15,6 +15,7 @@
 @synthesize currentViewController;
 @synthesize dropZoneView;
 @synthesize imageCropView;
+@synthesize scrollView;
 
 - (void)awakeFromNib
 {
@@ -46,18 +47,57 @@
 {
     image = [dropZoneView image];
     
-    // resize the image to fit the view?
-    // or resize the window to fit the view.
-    
     // remove containerView subview.
     [dropZoneView removeFromSuperview];
     
-    imageCropView = [[ImageCropView alloc] initWithFrame:[containerView bounds]];
+    // the imageCropView needs to fit the image in for the best results when cropping.
+    // need to adjust the x, y to centre the image. not important now.
+    NSRect imageBounds = NSMakeRect(0, 0, image.size.width, image.size.height);
+    
+    // create the new view.
+    imageCropView = [[ImageCropView alloc] initWithFrame:imageBounds];
     [imageCropView setImage:image];
-    [containerView addSubview:imageCropView];
+    
+    // add the new view.
+    scrollView = [[NSScrollView alloc] initWithFrame:imageBounds];
+    
+    [scrollView setHasVerticalScroller:YES];
+    [scrollView setHasHorizontalScroller:YES];
+    
+    [scrollView setDocumentView:imageCropView];
+    [containerView addSubview:scrollView];
+    [self.window setContentView:scrollView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(imageFromCrop)
+                                                 name:@"ImageCropComplete"
+                                               object:nil];
     
     // remove observer
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ImageUploadReciever" object:nil];
+}
+
+- (void) imageFromCrop
+{
+    image = [imageCropView croppedImage];
+    
+    // update image crop view. scrollview etc.
+    NSRect imageBounds = NSMakeRect(0, 0, image.size.width, image.size.height);
+    
+    // create the new view.
+    imageCropView = [[ImageCropView alloc] initWithFrame:imageBounds];
+    [imageCropView setImage:image];
+    
+    // add the new view.
+    scrollView = [[NSScrollView alloc] initWithFrame:imageBounds];
+    
+    [scrollView setHasVerticalScroller:YES];
+    [scrollView setHasHorizontalScroller:YES];
+    
+    [scrollView setDocumentView:imageCropView];
+    [containerView addSubview:scrollView];
+    [self.window setContentView:scrollView];
+    
 }
 
 - (void) changeViewController:(NSString*)viewControllerKey

@@ -13,7 +13,9 @@
     NSPoint start;
     NSPoint current;
     BOOL cropHasStarted;
+    NSImage* _croppedImage;
 }
 
+@property (nonatomic, strong) NSImage* croppedImage;
 
 @end

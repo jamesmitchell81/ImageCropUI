@@ -10,6 +10,8 @@
 
 @implementation ImageCropView
 
+@synthesize croppedImage = _croppedImage;
+
 - (id) initWithFrame:(NSRect)frameRect
 {
     self = [super initWithFrame:frameRect];
@@ -45,7 +47,6 @@
     NSPoint windowLocation = [theEvent locationInWindow];
     NSPoint viewLocation = [self convertPoint:windowLocation fromView:nil];
     start = viewLocation;
-//    NSLog(@"x: %f  y:%f", start.x, start.y);
     
     [self setNeedsDisplay:YES];
 }
@@ -57,31 +58,45 @@
     current = viewLocation;
     
     cropHasStarted = YES;
-//    NSLog(@"x: %f  y:%f", current.x, current.y);
-
     [self setNeedsDisplay:YES];
 }
 
 - (void) mouseUp:(NSEvent *)theEvent
 {
     if ( !cropHasStarted ) return;
-    // crop the image
-    NSSize currentImageSize = [[self image] size];
-    NSSize viewSize = self.frame.size;
-    
-    NSLog(@"image width:%f, height:%f - view width:%f, height:%f", currentImageSize.width, currentImageSize.height, viewSize.width, viewSize.height);
     
     NSSize cropSize;
     cropSize.width = (int)(current.x - start.x);
     cropSize.height = (int)(start.y - current.y);
+
+    int temp;
     
-    NSImage* newImage = [[NSImage alloc] initWithSize:cropSize];
-    [newImage addRepresentation:[self croppedRepresentationOfImage:[self image]
+    // normalise crop position points.
+     if ( start.x > current.x )
+     {
+         temp = start.x;
+         start.x = current.x;
+         current.x = temp;
+     }
+    
+    if ( start.y < current.y )
+    {
+        temp = start.y;
+        start.y = current.y;
+        current.y = temp;
+    }
+
+    _croppedImage = [[NSImage alloc] initWithSize:cropSize];
+    [_croppedImage addRepresentation:[self croppedRepresentationOfImage:[self image]
                                                          fromPoint:start
                                                            toPoint:current]];
+
+    [self setImage:_croppedImage];
     
-    [self setImage:newImage];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageCropComplete" object:nil];
     
+    NSLog(@"After posted notification");
+
     cropHasStarted = NO;
     [self setNeedsDisplay:YES];
 }
@@ -93,22 +108,25 @@
     int width = (int)(to.x - from.x);
     int height = (int)(from.y - to.y);
     
-    NSRect newRect = NSMakeRect(from.x, from.y, width, height);
+    NSRect newRect = NSMakeRect(from.x , to.y, width, height);
     
+    NSLog(@"width:%d, height:%d", width, height);
     NSLog(@"x: %f, y:%f", from.x, from.y);
+    NSLog(@"x: %f, y:%f", to.x, to.y);
     
     NSBitmapImageRep *representation = [[NSBitmapImageRep alloc]
                                         initWithBitmapDataPlanes: NULL
-                                        pixelsWide: width //newWidth
-                                        pixelsHigh: height //newHeight
+                                        pixelsWide: width
+                                        pixelsHigh: height
                                         bitsPerSample: 8
                                         samplesPerPixel: 4
                                         hasAlpha: YES
                                         isPlanar: NO
                                         colorSpaceName: NSCalibratedRGBColorSpace
-                                        bytesPerRow: width * 4 //newWidth
+                                        bytesPerRow: width * 4
                                         bitsPerPixel: 32];
-    
+
+    [image lockFocus];
     NSGraphicsContext *context = [NSGraphicsContext graphicsContextWithBitmapImageRep:representation];
     [NSGraphicsContext saveGraphicsState];
     [NSGraphicsContext setCurrentContext:context];
@@ -120,6 +138,8 @@
     
     [context flushGraphics];
     [NSGraphicsContext restoreGraphicsState];
+    [image unlockFocus];
+
     return representation;
 }
 

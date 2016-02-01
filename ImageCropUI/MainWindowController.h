@@ -31,6 +31,7 @@
 // Views/ViewControllers.
 @property (nonatomic, strong) DropZoneView* dropZoneView;
 @property (nonatomic, strong) ImageCropView* imageCropView;
+@property (nonatomic, strong) NSScrollView* scrollView;
 
 - (void) changeViewController:(NSString*)viewControllerName;
 
