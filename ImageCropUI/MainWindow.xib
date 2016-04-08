@@ -27,7 +27,7 @@
                         <rect key="frame" x="344" y="0.0" width="686" height="577"/>
                         <animations/>
                     </customView>
-                    <customView autoresizesSubviews="NO" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ywe-yJ-OdO">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ywe-yJ-OdO">
                         <rect key="frame" x="0.0" y="0.0" width="346" height="577"/>
                         <animations/>
                     </customView>
@@ -39,6 +39,5 @@
             </connections>
             <point key="canvasLocation" x="14" y="85.5"/>
         </window>
-        <customObject id="8vt-il-rwt"/>
     </objects>
 </document>

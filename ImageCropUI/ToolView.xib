@@ -7,12 +7,24 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ToolViewController">
             <connections>
+                <outlet property="aveFilterSlider" destination="a2z-re-GMj" id="6oo-lJ-7y6"/>
+                <outlet property="closeFilterSlider" destination="aCi-8K-ocy" id="HbJ-sf-TDm"/>
+                <outlet property="crop" destination="Dhj-6t-EnX" id="t6F-BA-4GK"/>
+                <outlet property="dilateFilterSlider" destination="tEf-hn-BIL" id="TgM-eR-XNQ"/>
+                <outlet property="erodeFilterSlider" destination="qGM-iM-4Aa" id="9T5-1i-TbE"/>
+                <outlet property="maxFilterSlider" destination="enh-Z0-anX" id="1dg-vo-ATa"/>
+                <outlet property="medianFilterSlider" destination="FOQ-Ty-k6v" id="XWw-EQ-B4J"/>
+                <outlet property="minFilterSlider" destination="HUD-yb-099" id="W3D-Vz-7Vk"/>
+                <outlet property="openFilterSlider" destination="SLl-XR-7T1" id="F28-qa-j6Z"/>
+                <outlet property="polaritySwitch" destination="QlH-Qu-urB" id="o2K-Sg-7Qz"/>
+                <outlet property="thin" destination="LXA-jc-MGC" id="zER-S9-kRV"/>
+                <outlet property="thresholdSlider" destination="SgR-ap-svj" id="9nU-5B-7Ca"/>
                 <outlet property="view" destination="a7Q-DC-7Ku" id="oGM-gi-Y69"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView autoresizesSubviews="NO" id="a7Q-DC-7Ku">
+        <customView id="a7Q-DC-7Ku">
             <rect key="frame" x="0.0" y="0.0" width="345" height="575"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
@@ -51,14 +63,20 @@
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SgR-ap-svj">
-                    <rect key="frame" x="141" y="356" width="168" height="21"/>
+                    <rect key="frame" x="141" y="350" width="168" height="27"/>
                     <animations/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="255" doubleValue="128" tickMarkPosition="above" sliderType="linear" id="8JY-rc-fXt"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="255" doubleValue="128" tickMarkPosition="below" numberOfTickMarks="15" sliderType="linear" id="8JY-rc-fXt"/>
+                    <connections>
+                        <action selector="threshold:" target="-2" id="a13-TL-H0f"/>
+                    </connections>
                 </slider>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qGM-iM-4Aa">
-                    <rect key="frame" x="142" y="304" width="168" height="21"/>
+                    <rect key="frame" x="142" y="300" width="168" height="27"/>
                     <animations/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="255" doubleValue="128" tickMarkPosition="above" sliderType="linear" id="W48-d7-zkT"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="W48-d7-zkT"/>
+                    <connections>
+                        <action selector="erode:" target="-2" id="GkV-F5-Zhq"/>
+                    </connections>
                 </slider>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqd-0R-JOl">
                     <rect key="frame" x="28" y="268" width="39" height="17"/>
@@ -70,9 +88,12 @@
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tEf-hn-BIL">
-                    <rect key="frame" x="142" y="266" width="168" height="21"/>
+                    <rect key="frame" x="142" y="262" width="168" height="27"/>
                     <animations/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="255" doubleValue="128" tickMarkPosition="above" sliderType="linear" id="E5z-iR-VSK"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="E5z-iR-VSK"/>
+                    <connections>
+                        <action selector="dilate:" target="-2" id="KH5-wR-irp"/>
+                    </connections>
                 </slider>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiT-fF-Kj5">
                     <rect key="frame" x="27" y="229" width="37" height="17"/>
@@ -84,9 +105,12 @@
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SLl-XR-7T1">
-                    <rect key="frame" x="141" y="227" width="168" height="21"/>
+                    <rect key="frame" x="141" y="223" width="168" height="27"/>
                     <animations/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="255" doubleValue="128" tickMarkPosition="above" sliderType="linear" id="qeA-OW-jPp"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="qeA-OW-jPp"/>
+                    <connections>
+                        <action selector="open:" target="-2" id="8Wb-ln-X18"/>
+                    </connections>
                 </slider>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3KP-o9-G0C">
                     <rect key="frame" x="27" y="190" width="39" height="17"/>
@@ -98,14 +122,20 @@
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCi-8K-ocy">
-                    <rect key="frame" x="141" y="188" width="168" height="21"/>
+                    <rect key="frame" x="141" y="184" width="168" height="27"/>
                     <animations/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="255" doubleValue="128" tickMarkPosition="above" sliderType="linear" id="xfx-xz-F4O"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="xfx-xz-F4O"/>
+                    <connections>
+                        <action selector="close:" target="-2" id="bbG-NR-lYp"/>
+                    </connections>
                 </slider>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a2z-re-GMj">
-                    <rect key="frame" x="141" y="530" width="168" height="21"/>
+                    <rect key="frame" x="141" y="524" width="168" height="27"/>
                     <animations/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="255" doubleValue="128" tickMarkPosition="above" sliderType="linear" id="tfi-gI-wjR"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="tfi-gI-wjR"/>
+                    <connections>
+                        <action selector="applyAveragingFilter:" target="-2" id="Vx9-VW-nPe"/>
+                    </connections>
                 </slider>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fTE-uo-tyh">
                     <rect key="frame" x="28" y="494" width="109" height="17"/>
@@ -117,9 +147,12 @@
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOQ-Ty-k6v">
-                    <rect key="frame" x="141" y="492" width="168" height="21"/>
+                    <rect key="frame" x="141" y="485" width="168" height="27"/>
                     <animations/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="255" doubleValue="128" tickMarkPosition="above" sliderType="linear" id="35p-fi-qle"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="35p-fi-qle"/>
+                    <connections>
+                        <action selector="applyMedianFilter:" target="-2" id="Gtm-tu-D5x"/>
+                    </connections>
                 </slider>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cGM-bg-9QM">
                     <rect key="frame" x="28" y="455" width="109" height="17"/>
@@ -131,9 +164,12 @@
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enh-Z0-anX">
-                    <rect key="frame" x="141" y="453" width="168" height="21"/>
+                    <rect key="frame" x="141" y="449" width="168" height="27"/>
                     <animations/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="255" doubleValue="128" tickMarkPosition="above" sliderType="linear" id="a95-Vi-JEt"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="a95-Vi-JEt"/>
+                    <connections>
+                        <action selector="applyMaxFilter:" target="-2" id="p3V-Fi-8Zn"/>
+                    </connections>
                 </slider>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W71-Do-B4x">
                     <rect key="frame" x="28" y="414" width="109" height="17"/>
@@ -145,9 +181,12 @@
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUD-yb-099">
-                    <rect key="frame" x="141" y="412" width="168" height="21"/>
+                    <rect key="frame" x="141" y="406" width="168" height="27"/>
                     <animations/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="255" doubleValue="128" tickMarkPosition="above" sliderType="linear" id="byG-lT-qmQ"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="byG-lT-qmQ"/>
+                    <connections>
+                        <action selector="applyMinFilter:" target="-2" id="hPw-dv-7uN"/>
+                    </connections>
                 </slider>
                 <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Dof-X8-NoW">
                     <rect key="frame" x="20" y="337" width="302" height="5"/>
@@ -178,28 +217,37 @@
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXA-jc-MGC">
-                    <rect key="frame" x="83" y="72" width="165" height="32"/>
+                    <rect key="frame" x="90" y="72" width="165" height="32"/>
                     <animations/>
                     <buttonCell key="cell" type="push" title="Thin" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zQj-k3-dFa">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="thin:" target="-2" id="ePo-El-aAs"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QlH-Qu-urB">
-                    <rect key="frame" x="83" y="122" width="165" height="32"/>
+                    <rect key="frame" x="90" y="126" width="165" height="32"/>
                     <animations/>
                     <buttonCell key="cell" type="push" title="Switch Polarity" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hTQ-h9-vkd">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="switchPolarity:" target="-2" id="4BF-5v-azJ"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-6t-EnX">
-                    <rect key="frame" x="83" y="21" width="165" height="32"/>
+                    <rect key="frame" x="90" y="21" width="165" height="32"/>
                     <animations/>
                     <buttonCell key="cell" type="push" title="Crop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4R8-Q1-Pdr">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="crop:" target="-2" id="njT-5y-H2e"/>
+                    </connections>
                 </button>
             </subviews>
             <animations/>

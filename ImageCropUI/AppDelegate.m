@@ -31,4 +31,9 @@
     [mainWindowController.window makeFirstResponder:nil]; // why
 }
 
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+{
+    return YES;
+}
+
 @end

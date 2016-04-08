@@ -28,7 +28,6 @@
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
-    // Drawing code here.
     if ( cropHasStarted )
     {
         CGFloat width = current.x - start.x ;
@@ -96,8 +95,6 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageCropComplete"
                                                         object:nil];
     
-    NSLog(@"After posted notification");
-
     cropHasStarted = NO;
     [self setNeedsDisplay:YES];
 }

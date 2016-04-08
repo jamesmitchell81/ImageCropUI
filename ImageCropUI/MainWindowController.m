@@ -23,7 +23,7 @@
 - (void)awakeFromNib
 {
     [self changeToDropZoneController];
-    [self addToolView];
+//    [self addToolView];
 }
 
 - (void) changeToDropZoneController
@@ -51,6 +51,10 @@
 {
     toolViewController = [[ToolViewController alloc] initWithNibName:@"ToolView" bundle:nil];
     [toolView addSubview:[toolViewController view]];
+
+    
+    
+    toolViewController.image = image;
 }
 
 - (void) imageFromDropZoneController
@@ -76,7 +80,9 @@
     
     [scrollView setDocumentView:imageCropView];
     [containerView addSubview:scrollView];
-    [self.window setContentView:scrollView];
+//    [self.window setContentView:scrollView];
+    
+    [self addToolView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(imageFromCrop)
@@ -89,6 +95,10 @@
 
 - (void) imageFromCrop
 {
+    NSRect viewBounds;
+    int viewWidth;
+    int viewHeight;
+    
     image = [imageCropView croppedImage];
     
     // update image crop view. scrollview etc.
@@ -98,18 +108,41 @@
     imageCropView = [[ImageCropView alloc] initWithFrame:imageBounds];
     [imageCropView setImage:image];
     
+    NSLog(@"%f, %f", containerView.bounds.size.height, containerView.bounds.size.width);
+    NSLog(@"%f, %f", image.size.height, image.size.width);
+    
+    int containerHeight = containerView.bounds.size.height;
+    int containerWidth = containerView.bounds.size.width;
+    
+    if ( containerHeight > image.size.height )
+    {
+        viewHeight = containerHeight;
+    } else {
+        viewHeight = image.size.height;
+    }
+    
+    if ( containerWidth > image.size.width )
+    {
+        viewWidth = containerWidth;
+    } else {
+        viewWidth = image.size.width;
+    }
+
+    viewBounds = NSMakeRect(0, 0, viewWidth, viewHeight);
+    
     // add the new view.
-    scrollView = [[NSScrollView alloc] initWithFrame:imageBounds];
+    scrollView = [[NSScrollView alloc] initWithFrame:viewBounds];
     
     [scrollView setHasVerticalScroller:YES];
     [scrollView setHasHorizontalScroller:YES];
     
     [scrollView setDocumentView:imageCropView];
     [containerView addSubview:scrollView];
-    [self.window setContentView:scrollView];
+//    [self.window setContentView:scrollView];
     
     NSBitmapImageRep* rep = [ImageRepresentation grayScaleRepresentationOfImage:image];
-    [ImageRepresentation saveImageFileFromRepresentation:rep fileName:@"Cropped"];
+    
+//    [ImageRepresentation saveImageFileFromRepresentation:rep fileName:@"Cropped"];
 }
 
 - (void) changeViewController:(NSString*)viewControllerKey
