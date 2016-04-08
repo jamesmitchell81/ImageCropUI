@@ -9,6 +9,7 @@
 #import "MainWindowController.h"
 #import "DropZoneView.h"
 #import "ImageCropView.h"
+#import "ToolViewController.h"
 
 #import "ImageRepresentation.h"
 
@@ -22,6 +23,7 @@
 - (void)awakeFromNib
 {
     [self changeToDropZoneController];
+    [self addToolView];
 }
 
 - (void) changeToDropZoneController
@@ -43,6 +45,12 @@
     
     // resize to fit.
 //    [[self.currentViewController view] setFrame:[containerView bounds]];
+}
+
+- (void) addToolView
+{
+    toolViewController = [[ToolViewController alloc] initWithNibName:@"ToolView" bundle:nil];
+    [toolView addSubview:[toolViewController view]];
 }
 
 - (void) imageFromDropZoneController

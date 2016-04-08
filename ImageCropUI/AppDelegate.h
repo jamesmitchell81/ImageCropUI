@@ -9,10 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 @class MainWindowController;
+@class ToolViewController;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 {
     MainWindowController* mainWindowController;
+    ToolViewController* toolViewController;
 }
 
 //@property (nonatomic, readonly) JMWindowController* mainWindowController;

@@ -12,10 +12,12 @@
 		8879064A1CB7BBC800E21476 /* ImageAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906431CB7BBC800E21476 /* ImageAnalysis.m */; };
 		8879064B1CB7BBC800E21476 /* ImageRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906451CB7BBC800E21476 /* ImageRepresentation.m */; };
 		8879064C1CB7BBC800E21476 /* IntArrayUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906471CB7BBC800E21476 /* IntArrayUtil.m */; };
-		8879064D1CB7BBC800E21476 /* IP.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906491CB7BBC800E21476 /* IP.m */; };
+		8879064D1CB7BBC800E21476 /* ImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906491CB7BBC800E21476 /* ImageProcessing.m */; };
 		887906541CB7BBDE00E21476 /* Morphology.m in Sources */ = {isa = PBXBuildFile; fileRef = 8879064F1CB7BBDE00E21476 /* Morphology.m */; };
 		887906551CB7BBDE00E21476 /* StructuringElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906511CB7BBDE00E21476 /* StructuringElement.m */; };
 		887906561CB7BBDE00E21476 /* ZhangSuenThin.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906531CB7BBDE00E21476 /* ZhangSuenThin.m */; };
+		8879065F1CB7ED6900E21476 /* ToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8879065E1CB7ED6900E21476 /* ToolViewController.m */; };
+		887906611CB7F9DD00E21476 /* ToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887906601CB7F9DD00E21476 /* ToolView.xib */; };
 		88F4961B1C527EA000D35B48 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F496191C527EA000D35B48 /* MainWindowController.m */; };
 		88F4961C1C527EA000D35B48 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88F4961A1C527EA000D35B48 /* MainWindow.xib */; };
 		88F807F61C515F68001A7B3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F807F51C515F68001A7B3A /* AppDelegate.m */; };
@@ -55,14 +57,17 @@
 		887906451CB7BBC800E21476 /* ImageRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageRepresentation.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/ImageRepresentation.m; sourceTree = "<group>"; };
 		887906461CB7BBC800E21476 /* IntArrayUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntArrayUtil.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/IntArrayUtil.h; sourceTree = "<group>"; };
 		887906471CB7BBC800E21476 /* IntArrayUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntArrayUtil.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/IntArrayUtil.m; sourceTree = "<group>"; };
-		887906481CB7BBC800E21476 /* IP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IP.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/IP.h; sourceTree = "<group>"; };
-		887906491CB7BBC800E21476 /* IP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IP.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/IP.m; sourceTree = "<group>"; };
+		887906481CB7BBC800E21476 /* ImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageProcessing.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/ImageProcessing.h; sourceTree = "<group>"; };
+		887906491CB7BBC800E21476 /* ImageProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageProcessing.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/ImageProcessing.m; sourceTree = "<group>"; };
 		8879064E1CB7BBDE00E21476 /* Morphology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Morphology.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/Morphology.h; sourceTree = "<group>"; };
 		8879064F1CB7BBDE00E21476 /* Morphology.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Morphology.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/Morphology.m; sourceTree = "<group>"; };
 		887906501CB7BBDE00E21476 /* StructuringElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StructuringElement.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/StructuringElement.h; sourceTree = "<group>"; };
 		887906511CB7BBDE00E21476 /* StructuringElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StructuringElement.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/StructuringElement.m; sourceTree = "<group>"; };
 		887906521CB7BBDE00E21476 /* ZhangSuenThin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZhangSuenThin.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/ZhangSuenThin.h; sourceTree = "<group>"; };
 		887906531CB7BBDE00E21476 /* ZhangSuenThin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZhangSuenThin.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/ZhangSuenThin.m; sourceTree = "<group>"; };
+		8879065D1CB7ED6900E21476 /* ToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolViewController.h; sourceTree = "<group>"; };
+		8879065E1CB7ED6900E21476 /* ToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolViewController.m; sourceTree = "<group>"; };
+		887906601CB7F9DD00E21476 /* ToolView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolView.xib; sourceTree = "<group>"; };
 		88F496181C527EA000D35B48 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		88F496191C527EA000D35B48 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		88F4961A1C527EA000D35B48 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -112,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				88F4961A1C527EA000D35B48 /* MainWindow.xib */,
+				887906601CB7F9DD00E21476 /* ToolView.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -140,12 +146,19 @@
 				887906431CB7BBC800E21476 /* ImageAnalysis.m */,
 				887906441CB7BBC800E21476 /* ImageRepresentation.h */,
 				887906451CB7BBC800E21476 /* ImageRepresentation.m */,
-				887906461CB7BBC800E21476 /* IntArrayUtil.h */,
-				887906471CB7BBC800E21476 /* IntArrayUtil.m */,
-				887906481CB7BBC800E21476 /* IP.h */,
-				887906491CB7BBC800E21476 /* IP.m */,
+				887906481CB7BBC800E21476 /* ImageProcessing.h */,
+				887906491CB7BBC800E21476 /* ImageProcessing.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		887906571CB7C73C00E21476 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				887906461CB7BBC800E21476 /* IntArrayUtil.h */,
+				887906471CB7BBC800E21476 /* IntArrayUtil.m */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		88F807E81C515F67001A7B3A = {
@@ -172,9 +185,10 @@
 			isa = PBXGroup;
 			children = (
 				885C96081C5A8A6B006EB10E /* Models */,
-				8853BB371C5254A9003C1315 /* Views */,
-				8805E5761C57D22600A4D60B /* Nibs */,
 				88F808261C5162C2001A7B3A /* Controllers */,
+				8853BB371C5254A9003C1315 /* Views */,
+				887906571CB7C73C00E21476 /* Util */,
+				8805E5761C57D22600A4D60B /* Nibs */,
 				88F807F41C515F68001A7B3A /* AppDelegate.h */,
 				88F807F51C515F68001A7B3A /* AppDelegate.m */,
 				88F807FF1C515F68001A7B3A /* Main.storyboard */,
@@ -218,6 +232,8 @@
 				88F496191C527EA000D35B48 /* MainWindowController.m */,
 				88F807FA1C515F68001A7B3A /* ViewController.h */,
 				88F807FB1C515F68001A7B3A /* ViewController.m */,
+				8879065D1CB7ED6900E21476 /* ToolViewController.h */,
+				8879065E1CB7ED6900E21476 /* ToolViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -327,6 +343,7 @@
 			files = (
 				88F807FE1C515F68001A7B3A /* Assets.xcassets in Resources */,
 				88F4961C1C527EA000D35B48 /* MainWindow.xib in Resources */,
+				887906611CB7F9DD00E21476 /* ToolView.xib in Resources */,
 				88F808011C515F68001A7B3A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,7 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8879064D1CB7BBC800E21476 /* IP.m in Sources */,
+				8879064D1CB7BBC800E21476 /* ImageProcessing.m in Sources */,
 				8805E57C1C58116E00A4D60B /* ImageCropView.m in Sources */,
 				88F807FC1C515F68001A7B3A /* ViewController.m in Sources */,
 				887906561CB7BBDE00E21476 /* ZhangSuenThin.m in Sources */,
@@ -361,6 +378,7 @@
 				887906541CB7BBDE00E21476 /* Morphology.m in Sources */,
 				88F807F91C515F68001A7B3A /* main.m in Sources */,
 				88F807F61C515F68001A7B3A /* AppDelegate.m in Sources */,
+				8879065F1CB7ED6900E21476 /* ToolViewController.m in Sources */,
 				88F4961B1C527EA000D35B48 /* MainWindowController.m in Sources */,
 				8805E5791C57D8CA00A4D60B /* DropZoneView.m in Sources */,
 				8879064B1CB7BBC800E21476 /* ImageRepresentation.m in Sources */,

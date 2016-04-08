@@ -11,13 +11,19 @@
 
 @class DropZoneView;
 @class ImageCropView;
+@class ToolViewController;
 
 @interface MainWindowController : NSWindowController
 {
     // the container view.
     // Where the other view are displayed.
-    IBOutlet NSView* containerView;
     
+    
+    IBOutlet NSView* containerView;
+    IBOutlet NSView* toolView;
+    
+    ToolViewController* toolViewController;
+       
     NSImage* image;
     
     // collection of the view controllers.

@@ -163,7 +163,7 @@
     NSGraphicsContext *context = [NSGraphicsContext graphicsContextWithBitmapImageRep:representation];
     [NSGraphicsContext saveGraphicsState];
     [NSGraphicsContext setCurrentContext:context];
-    [image drawAtPoint:NSZeroPoint fromRect:NSZeroRect operation:NSCompositeCopy fraction:1.0];
+        [image drawAtPoint:NSZeroPoint fromRect:NSZeroRect operation:NSCompositeCopy fraction:1.0];
     [context flushGraphics];
     [NSGraphicsContext restoreGraphicsState];
     return representation;
