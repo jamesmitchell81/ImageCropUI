@@ -93,7 +93,8 @@
 
     [self setImage:_croppedImage];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageCropComplete" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageCropComplete"
+                                                        object:nil];
     
     NSLog(@"After posted notification");
 

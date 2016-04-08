@@ -10,6 +10,8 @@
 #import "DropZoneView.h"
 #import "ImageCropView.h"
 
+#import "ImageRepresentation.h"
+
 @implementation MainWindowController
 
 @synthesize currentViewController;
@@ -98,6 +100,8 @@
     [containerView addSubview:scrollView];
     [self.window setContentView:scrollView];
     
+    NSBitmapImageRep* rep = [ImageRepresentation grayScaleRepresentationOfImage:image];
+    [ImageRepresentation saveImageFileFromRepresentation:rep fileName:@"Cropped"];
 }
 
 - (void) changeViewController:(NSString*)viewControllerKey

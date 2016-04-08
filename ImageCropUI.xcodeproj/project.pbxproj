@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8805E5791C57D8CA00A4D60B /* DropZoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8805E5781C57D8CA00A4D60B /* DropZoneView.m */; };
+		8805E57C1C58116E00A4D60B /* ImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8805E57B1C58116E00A4D60B /* ImageCropView.m */; };
+		8879064A1CB7BBC800E21476 /* ImageAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906431CB7BBC800E21476 /* ImageAnalysis.m */; };
+		8879064B1CB7BBC800E21476 /* ImageRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906451CB7BBC800E21476 /* ImageRepresentation.m */; };
+		8879064C1CB7BBC800E21476 /* IntArrayUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906471CB7BBC800E21476 /* IntArrayUtil.m */; };
+		8879064D1CB7BBC800E21476 /* IP.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906491CB7BBC800E21476 /* IP.m */; };
+		887906541CB7BBDE00E21476 /* Morphology.m in Sources */ = {isa = PBXBuildFile; fileRef = 8879064F1CB7BBDE00E21476 /* Morphology.m */; };
+		887906551CB7BBDE00E21476 /* StructuringElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906511CB7BBDE00E21476 /* StructuringElement.m */; };
+		887906561CB7BBDE00E21476 /* ZhangSuenThin.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906531CB7BBDE00E21476 /* ZhangSuenThin.m */; };
+		88F4961B1C527EA000D35B48 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F496191C527EA000D35B48 /* MainWindowController.m */; };
+		88F4961C1C527EA000D35B48 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88F4961A1C527EA000D35B48 /* MainWindow.xib */; };
+		88F807F61C515F68001A7B3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F807F51C515F68001A7B3A /* AppDelegate.m */; };
+		88F807F91C515F68001A7B3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F807F81C515F68001A7B3A /* main.m */; };
+		88F807FC1C515F68001A7B3A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F807FB1C515F68001A7B3A /* ViewController.m */; };
+		88F807FE1C515F68001A7B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F807FD1C515F68001A7B3A /* Assets.xcassets */; };
+		88F808011C515F68001A7B3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F807FF1C515F68001A7B3A /* Main.storyboard */; };
+		88F8080C1C515F68001A7B3A /* ImageCropUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F8080B1C515F68001A7B3A /* ImageCropUITests.m */; };
+		88F808171C515F68001A7B3A /* ImageCropUIUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F808161C515F68001A7B3A /* ImageCropUIUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		88F808081C515F68001A7B3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88F807E91C515F67001A7B3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88F807F01C515F67001A7B3A;
+			remoteInfo = ImageCropUI;
+		};
+		88F808131C515F68001A7B3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88F807E91C515F67001A7B3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88F807F01C515F67001A7B3A;
+			remoteInfo = ImageCropUI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8805E5771C57D8CA00A4D60B /* DropZoneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropZoneView.h; sourceTree = "<group>"; };
+		8805E5781C57D8CA00A4D60B /* DropZoneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropZoneView.m; sourceTree = "<group>"; };
+		8805E57A1C58116E00A4D60B /* ImageCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCropView.h; sourceTree = "<group>"; };
+		8805E57B1C58116E00A4D60B /* ImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCropView.m; sourceTree = "<group>"; };
+		887906421CB7BBC800E21476 /* ImageAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageAnalysis.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/ImageAnalysis.h; sourceTree = "<group>"; };
+		887906431CB7BBC800E21476 /* ImageAnalysis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageAnalysis.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/ImageAnalysis.m; sourceTree = "<group>"; };
+		887906441CB7BBC800E21476 /* ImageRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageRepresentation.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/ImageRepresentation.h; sourceTree = "<group>"; };
+		887906451CB7BBC800E21476 /* ImageRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageRepresentation.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/ImageRepresentation.m; sourceTree = "<group>"; };
+		887906461CB7BBC800E21476 /* IntArrayUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntArrayUtil.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/IntArrayUtil.h; sourceTree = "<group>"; };
+		887906471CB7BBC800E21476 /* IntArrayUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntArrayUtil.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/IntArrayUtil.m; sourceTree = "<group>"; };
+		887906481CB7BBC800E21476 /* IP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IP.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/IP.h; sourceTree = "<group>"; };
+		887906491CB7BBC800E21476 /* IP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IP.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/IP.m; sourceTree = "<group>"; };
+		8879064E1CB7BBDE00E21476 /* Morphology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Morphology.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/Morphology.h; sourceTree = "<group>"; };
+		8879064F1CB7BBDE00E21476 /* Morphology.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Morphology.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/Morphology.m; sourceTree = "<group>"; };
+		887906501CB7BBDE00E21476 /* StructuringElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StructuringElement.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/StructuringElement.h; sourceTree = "<group>"; };
+		887906511CB7BBDE00E21476 /* StructuringElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StructuringElement.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/StructuringElement.m; sourceTree = "<group>"; };
+		887906521CB7BBDE00E21476 /* ZhangSuenThin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZhangSuenThin.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/ZhangSuenThin.h; sourceTree = "<group>"; };
+		887906531CB7BBDE00E21476 /* ZhangSuenThin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZhangSuenThin.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/ZhangSuenThin.m; sourceTree = "<group>"; };
+		88F496181C527EA000D35B48 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		88F496191C527EA000D35B48 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		88F4961A1C527EA000D35B48 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		88F807F11C515F68001A7B3A /* ImageCropUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageCropUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88F807F41C515F68001A7B3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		88F807F51C515F68001A7B3A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		88F807F81C515F68001A7B3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		88F807FA1C515F68001A7B3A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		88F807FB1C515F68001A7B3A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		88F807FD1C515F68001A7B3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88F808001C515F68001A7B3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		88F808021C515F68001A7B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88F808071C515F68001A7B3A /* ImageCropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageCropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88F8080B1C515F68001A7B3A /* ImageCropUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCropUITests.m; sourceTree = "<group>"; };
+		88F8080D1C515F68001A7B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88F808121C515F68001A7B3A /* ImageCropUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageCropUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88F808161C515F68001A7B3A /* ImageCropUIUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCropUIUITests.m; sourceTree = "<group>"; };
+		88F808181C515F68001A7B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88F807EE1C515F67001A7B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F808041C515F68001A7B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F8080F1C515F68001A7B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8805E5761C57D22600A4D60B /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				88F4961A1C527EA000D35B48 /* MainWindow.xib */,
+			);
+			name = Nibs;
+			sourceTree = "<group>";
+		};
+		8853BB371C5254A9003C1315 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8805E5771C57D8CA00A4D60B /* DropZoneView.h */,
+				8805E5781C57D8CA00A4D60B /* DropZoneView.m */,
+				8805E57A1C58116E00A4D60B /* ImageCropView.h */,
+				8805E57B1C58116E00A4D60B /* ImageCropView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		885C96081C5A8A6B006EB10E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8879064E1CB7BBDE00E21476 /* Morphology.h */,
+				8879064F1CB7BBDE00E21476 /* Morphology.m */,
+				887906501CB7BBDE00E21476 /* StructuringElement.h */,
+				887906511CB7BBDE00E21476 /* StructuringElement.m */,
+				887906521CB7BBDE00E21476 /* ZhangSuenThin.h */,
+				887906531CB7BBDE00E21476 /* ZhangSuenThin.m */,
+				887906421CB7BBC800E21476 /* ImageAnalysis.h */,
+				887906431CB7BBC800E21476 /* ImageAnalysis.m */,
+				887906441CB7BBC800E21476 /* ImageRepresentation.h */,
+				887906451CB7BBC800E21476 /* ImageRepresentation.m */,
+				887906461CB7BBC800E21476 /* IntArrayUtil.h */,
+				887906471CB7BBC800E21476 /* IntArrayUtil.m */,
+				887906481CB7BBC800E21476 /* IP.h */,
+				887906491CB7BBC800E21476 /* IP.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		88F807E81C515F67001A7B3A = {
+			isa = PBXGroup;
+			children = (
+				88F807F31C515F68001A7B3A /* ImageCropUI */,
+				88F8080A1C515F68001A7B3A /* ImageCropUITests */,
+				88F808151C515F68001A7B3A /* ImageCropUIUITests */,
+				88F807F21C515F68001A7B3A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88F807F21C515F68001A7B3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88F807F11C515F68001A7B3A /* ImageCropUI.app */,
+				88F808071C515F68001A7B3A /* ImageCropUITests.xctest */,
+				88F808121C515F68001A7B3A /* ImageCropUIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88F807F31C515F68001A7B3A /* ImageCropUI */ = {
+			isa = PBXGroup;
+			children = (
+				885C96081C5A8A6B006EB10E /* Models */,
+				8853BB371C5254A9003C1315 /* Views */,
+				8805E5761C57D22600A4D60B /* Nibs */,
+				88F808261C5162C2001A7B3A /* Controllers */,
+				88F807F41C515F68001A7B3A /* AppDelegate.h */,
+				88F807F51C515F68001A7B3A /* AppDelegate.m */,
+				88F807FF1C515F68001A7B3A /* Main.storyboard */,
+				88F808021C515F68001A7B3A /* Info.plist */,
+				88F807FD1C515F68001A7B3A /* Assets.xcassets */,
+				88F807F71C515F68001A7B3A /* Supporting Files */,
+			);
+			path = ImageCropUI;
+			sourceTree = "<group>";
+		};
+		88F807F71C515F68001A7B3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88F807F81C515F68001A7B3A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		88F8080A1C515F68001A7B3A /* ImageCropUITests */ = {
+			isa = PBXGroup;
+			children = (
+				88F8080B1C515F68001A7B3A /* ImageCropUITests.m */,
+				88F8080D1C515F68001A7B3A /* Info.plist */,
+			);
+			path = ImageCropUITests;
+			sourceTree = "<group>";
+		};
+		88F808151C515F68001A7B3A /* ImageCropUIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				88F808161C515F68001A7B3A /* ImageCropUIUITests.m */,
+				88F808181C515F68001A7B3A /* Info.plist */,
+			);
+			path = ImageCropUIUITests;
+			sourceTree = "<group>";
+		};
+		88F808261C5162C2001A7B3A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				88F496181C527EA000D35B48 /* MainWindowController.h */,
+				88F496191C527EA000D35B48 /* MainWindowController.m */,
+				88F807FA1C515F68001A7B3A /* ViewController.h */,
+				88F807FB1C515F68001A7B3A /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88F807F01C515F67001A7B3A /* ImageCropUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88F8081B1C515F68001A7B3A /* Build configuration list for PBXNativeTarget "ImageCropUI" */;
+			buildPhases = (
+				88F807ED1C515F67001A7B3A /* Sources */,
+				88F807EE1C515F67001A7B3A /* Frameworks */,
+				88F807EF1C515F67001A7B3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageCropUI;
+			productName = ImageCropUI;
+			productReference = 88F807F11C515F68001A7B3A /* ImageCropUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		88F808061C515F68001A7B3A /* ImageCropUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88F8081E1C515F68001A7B3A /* Build configuration list for PBXNativeTarget "ImageCropUITests" */;
+			buildPhases = (
+				88F808031C515F68001A7B3A /* Sources */,
+				88F808041C515F68001A7B3A /* Frameworks */,
+				88F808051C515F68001A7B3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88F808091C515F68001A7B3A /* PBXTargetDependency */,
+			);
+			name = ImageCropUITests;
+			productName = ImageCropUITests;
+			productReference = 88F808071C515F68001A7B3A /* ImageCropUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		88F808111C515F68001A7B3A /* ImageCropUIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88F808211C515F68001A7B3A /* Build configuration list for PBXNativeTarget "ImageCropUIUITests" */;
+			buildPhases = (
+				88F8080E1C515F68001A7B3A /* Sources */,
+				88F8080F1C515F68001A7B3A /* Frameworks */,
+				88F808101C515F68001A7B3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88F808141C515F68001A7B3A /* PBXTargetDependency */,
+			);
+			name = ImageCropUIUITests;
+			productName = ImageCropUIUITests;
+			productReference = 88F808121C515F68001A7B3A /* ImageCropUIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88F807E91C515F67001A7B3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "James Mitchell";
+				TargetAttributes = {
+					88F807F01C515F67001A7B3A = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					88F808061C515F68001A7B3A = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 88F807F01C515F67001A7B3A;
+					};
+					88F808111C515F68001A7B3A = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 88F807F01C515F67001A7B3A;
+					};
+				};
+			};
+			buildConfigurationList = 88F807EC1C515F67001A7B3A /* Build configuration list for PBXProject "ImageCropUI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 88F807E81C515F67001A7B3A;
+			productRefGroup = 88F807F21C515F68001A7B3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88F807F01C515F67001A7B3A /* ImageCropUI */,
+				88F808061C515F68001A7B3A /* ImageCropUITests */,
+				88F808111C515F68001A7B3A /* ImageCropUIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88F807EF1C515F67001A7B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F807FE1C515F68001A7B3A /* Assets.xcassets in Resources */,
+				88F4961C1C527EA000D35B48 /* MainWindow.xib in Resources */,
+				88F808011C515F68001A7B3A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F808051C515F68001A7B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F808101C515F68001A7B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88F807ED1C515F67001A7B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8879064D1CB7BBC800E21476 /* IP.m in Sources */,
+				8805E57C1C58116E00A4D60B /* ImageCropView.m in Sources */,
+				88F807FC1C515F68001A7B3A /* ViewController.m in Sources */,
+				887906561CB7BBDE00E21476 /* ZhangSuenThin.m in Sources */,
+				887906551CB7BBDE00E21476 /* StructuringElement.m in Sources */,
+				8879064C1CB7BBC800E21476 /* IntArrayUtil.m in Sources */,
+				887906541CB7BBDE00E21476 /* Morphology.m in Sources */,
+				88F807F91C515F68001A7B3A /* main.m in Sources */,
+				88F807F61C515F68001A7B3A /* AppDelegate.m in Sources */,
+				88F4961B1C527EA000D35B48 /* MainWindowController.m in Sources */,
+				8805E5791C57D8CA00A4D60B /* DropZoneView.m in Sources */,
+				8879064B1CB7BBC800E21476 /* ImageRepresentation.m in Sources */,
+				8879064A1CB7BBC800E21476 /* ImageAnalysis.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F808031C515F68001A7B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F8080C1C515F68001A7B3A /* ImageCropUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F8080E1C515F68001A7B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F808171C515F68001A7B3A /* ImageCropUIUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88F808091C515F68001A7B3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88F807F01C515F67001A7B3A /* ImageCropUI */;
+			targetProxy = 88F808081C515F68001A7B3A /* PBXContainerItemProxy */;
+		};
+		88F808141C515F68001A7B3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88F807F01C515F67001A7B3A /* ImageCropUI */;
+			targetProxy = 88F808131C515F68001A7B3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		88F807FF1C515F68001A7B3A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88F808001C515F68001A7B3A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88F808191C515F68001A7B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		88F8081A1C515F68001A7B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		88F8081C1C515F68001A7B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageCropUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jm.ImageCropUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		88F8081D1C515F68001A7B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageCropUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jm.ImageCropUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		88F8081F1C515F68001A7B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageCropUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jm.ImageCropUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageCropUI.app/Contents/MacOS/ImageCropUI";
+			};
+			name = Debug;
+		};
+		88F808201C515F68001A7B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageCropUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jm.ImageCropUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageCropUI.app/Contents/MacOS/ImageCropUI";
+			};
+			name = Release;
+		};
+		88F808221C515F68001A7B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageCropUIUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jm.ImageCropUIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ImageCropUI;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		88F808231C515F68001A7B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageCropUIUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jm.ImageCropUIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ImageCropUI;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88F807EC1C515F67001A7B3A /* Build configuration list for PBXProject "ImageCropUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F808191C515F68001A7B3A /* Debug */,
+				88F8081A1C515F68001A7B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88F8081B1C515F68001A7B3A /* Build configuration list for PBXNativeTarget "ImageCropUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F8081C1C515F68001A7B3A /* Debug */,
+				88F8081D1C515F68001A7B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88F8081E1C515F68001A7B3A /* Build configuration list for PBXNativeTarget "ImageCropUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F8081F1C515F68001A7B3A /* Debug */,
+				88F808201C515F68001A7B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88F808211C515F68001A7B3A /* Build configuration list for PBXNativeTarget "ImageCropUIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F808221C515F68001A7B3A /* Debug */,
+				88F808231C515F68001A7B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88F807E91C515F67001A7B3A /* Project object */;
+}
