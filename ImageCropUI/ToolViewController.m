@@ -83,7 +83,7 @@
 
 - (IBAction) crop:(id)sender
 {
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"CropImageToolSelection" object:self];
 }
 
 @end

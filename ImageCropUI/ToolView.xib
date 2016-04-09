@@ -203,7 +203,7 @@
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="zI2-vC-MZa">
-                    <rect key="frame" x="20" y="61" width="302" height="5"/>
+                    <rect key="frame" x="20" y="60" width="302" height="5"/>
                     <animations/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -216,8 +216,8 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXA-jc-MGC">
-                    <rect key="frame" x="90" y="72" width="165" height="32"/>
+                <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXA-jc-MGC">
+                    <rect key="frame" x="84" y="66" width="177" height="43"/>
                     <animations/>
                     <buttonCell key="cell" type="push" title="Thin" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zQj-k3-dFa">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -227,8 +227,19 @@
                         <action selector="thin:" target="-2" id="ePo-El-aAs"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QlH-Qu-urB">
-                    <rect key="frame" x="90" y="126" width="165" height="32"/>
+                <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-6t-EnX">
+                    <rect key="frame" x="84" y="15" width="177" height="32"/>
+                    <animations/>
+                    <buttonCell key="cell" type="push" title="Crop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4R8-Q1-Pdr">
+                        <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="crop:" target="-2" id="njT-5y-H2e"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QlH-Qu-urB">
+                    <rect key="frame" x="84" y="112" width="183" height="51"/>
                     <animations/>
                     <buttonCell key="cell" type="push" title="Switch Polarity" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hTQ-h9-vkd">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -238,20 +249,9 @@
                         <action selector="switchPolarity:" target="-2" id="4BF-5v-azJ"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-6t-EnX">
-                    <rect key="frame" x="90" y="21" width="165" height="32"/>
-                    <animations/>
-                    <buttonCell key="cell" type="push" title="Crop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4R8-Q1-Pdr">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="crop:" target="-2" id="njT-5y-H2e"/>
-                    </connections>
-                </button>
             </subviews>
             <animations/>
-            <point key="canvasLocation" x="228.5" y="188.5"/>
+            <point key="canvasLocation" x="33.5" y="262.5"/>
         </customView>
     </objects>
 </document>

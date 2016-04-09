@@ -32,10 +32,11 @@
     {
         CGFloat width = current.x - start.x ;
         CGFloat height = current.y - start.y;
-        
         NSRect rect = NSMakeRect(start.x, start.y, width, height);
+        
+        CGFloat pattern[] = {4.0, 1.0};
         NSBezierPath* path = [NSBezierPath bezierPathWithRect:rect];
-
+        [path setLineDash:pattern count:sizeof(pattern) / sizeof(pattern[0]) phase:0];
         [path stroke];
     }
 }
@@ -47,7 +48,13 @@
     NSPoint viewLocation = [self convertPoint:windowLocation fromView:nil];
     start = viewLocation;
     
+    // prevent if outside image.
+//    NSSize s = self.image.size;
+//    NSRect viewBounds = self.bounds;
+    
     [self setNeedsDisplay:YES];
+    
+    
 }
 
 - (void) mouseDragged:(NSEvent *)theEvent
@@ -71,6 +78,7 @@
     int temp;
     
     // normalise crop position points.
+    // these are the positions within the view.
      if ( start.x > current.x )
      {
          temp = start.x;
@@ -84,6 +92,8 @@
         start.y = current.y;
         current.y = temp;
     }
+    
+    
 
     _croppedImage = [[NSImage alloc] initWithSize:cropSize];
     [_croppedImage addRepresentation:[self croppedRepresentationOfImage:[self image]

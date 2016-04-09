@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8805E5791C57D8CA00A4D60B /* DropZoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8805E5781C57D8CA00A4D60B /* DropZoneView.m */; };
 		8805E57C1C58116E00A4D60B /* ImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8805E57B1C58116E00A4D60B /* ImageCropView.m */; };
+		883762401CB90DFF00458768 /* ImageManipulationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8837623F1CB90DFF00458768 /* ImageManipulationView.m */; };
 		8879064A1CB7BBC800E21476 /* ImageAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906431CB7BBC800E21476 /* ImageAnalysis.m */; };
 		8879064B1CB7BBC800E21476 /* ImageRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906451CB7BBC800E21476 /* ImageRepresentation.m */; };
 		8879064C1CB7BBC800E21476 /* IntArrayUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906471CB7BBC800E21476 /* IntArrayUtil.m */; };
@@ -51,6 +52,8 @@
 		8805E5781C57D8CA00A4D60B /* DropZoneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropZoneView.m; sourceTree = "<group>"; };
 		8805E57A1C58116E00A4D60B /* ImageCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCropView.h; sourceTree = "<group>"; };
 		8805E57B1C58116E00A4D60B /* ImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCropView.m; sourceTree = "<group>"; };
+		8837623E1CB90DFF00458768 /* ImageManipulationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManipulationView.h; sourceTree = "<group>"; };
+		8837623F1CB90DFF00458768 /* ImageManipulationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManipulationView.m; sourceTree = "<group>"; };
 		887906421CB7BBC800E21476 /* ImageAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageAnalysis.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/ImageAnalysis.h; sourceTree = "<group>"; };
 		887906431CB7BBC800E21476 /* ImageAnalysis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageAnalysis.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/ImageAnalysis.m; sourceTree = "<group>"; };
 		887906441CB7BBC800E21476 /* ImageRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageRepresentation.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/ImageRepresentation.h; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				8805E5781C57D8CA00A4D60B /* DropZoneView.m */,
 				8805E57A1C58116E00A4D60B /* ImageCropView.h */,
 				8805E57B1C58116E00A4D60B /* ImageCropView.m */,
+				8837623E1CB90DFF00458768 /* ImageManipulationView.h */,
+				8837623F1CB90DFF00458768 /* ImageManipulationView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 			files = (
 				8879064D1CB7BBC800E21476 /* ImageProcessing.m in Sources */,
 				8805E57C1C58116E00A4D60B /* ImageCropView.m in Sources */,
+				883762401CB90DFF00458768 /* ImageManipulationView.m in Sources */,
 				88F807FC1C515F68001A7B3A /* ViewController.m in Sources */,
 				887906561CB7BBDE00E21476 /* ZhangSuenThin.m in Sources */,
 				887906551CB7BBDE00E21476 /* StructuringElement.m in Sources */,

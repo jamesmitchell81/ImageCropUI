@@ -9,14 +9,17 @@
 #import "MainWindowController.h"
 #import "DropZoneView.h"
 #import "ImageCropView.h"
+#import "ImageManipulationView.h"
 #import "ToolViewController.h"
 
 #import "ImageRepresentation.h"
 
 @implementation MainWindowController
 
+@synthesize representation;
 @synthesize currentViewController;
 @synthesize dropZoneView;
+@synthesize imgManipView;
 @synthesize imageCropView;
 @synthesize scrollView;
 
@@ -39,7 +42,7 @@
     [containerView addSubview:dropZoneView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(imageFromDropZoneController)
+                                             selector:@selector(handleDroppedImage)
                                                  name:@"ImageUploadReciever"
                                                object:nil];
     
@@ -47,102 +50,122 @@
 //    [[self.currentViewController view] setFrame:[containerView bounds]];
 }
 
-- (void) addToolView
+/*
+ * Where the image is larger then the container window
+ * set the destination view to be the size of the image.
+ */
+- (NSRect) determineViewBounds
 {
-    toolViewController = [[ToolViewController alloc] initWithNibName:@"ToolView" bundle:nil];
-    [toolView addSubview:[toolViewController view]];
-
+    NSRect viewBounds;
+    int viewWidth;
+    int viewHeight;
     
+    NSLog(@"%@, %f, %f", @"container bounds", containerView.bounds.size.height, containerView.bounds.size.width);
+    NSLog(@"%@, %f, %f", @"Image Bounds", representation.subject.size.height, representation.subject.size.width);
     
-    toolViewController.image = image;
+    int containerHeight = containerView.bounds.size.height;
+    int containerWidth = containerView.bounds.size.width;
+    
+    if ( containerHeight > representation.subject.size.height )
+    {
+        viewHeight = containerHeight;
+    } else {
+        viewHeight = representation.subject.size.height;
+    }
+    
+    if ( containerWidth > representation.subject.size.width )
+    {
+        viewWidth = containerWidth;
+    } else {
+        viewWidth = representation.subject.size.width;
+    }
+    
+    viewBounds = NSMakeRect(0, 0, viewWidth, viewHeight);
+    
+    // temp
+    viewBounds = NSMakeRect(0, 0, containerWidth, containerHeight);
+    
+    return viewBounds;
 }
 
-- (void) imageFromDropZoneController
+- (void) handleDroppedImage
 {
-    image = [dropZoneView image];
-    
-    // remove containerView subview.
+    [self imageFromDropZone];
+    [self setImageManipulationView];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ImageUploadReciever" object:nil];
+}
+
+
+- (void) imageFromDropZone
+{
+    representation = [[ImageRepresentation alloc] init];
+    representation.subject = [dropZoneView image];
     [dropZoneView removeFromSuperview];
+}
+
+- (void) addToolView
+{
+    NSArray* views = [toolView subviews];
     
-    // the imageCropView needs to fit the image in for the best results when cropping.
-    // need to adjust the x, y to centre the image. not important now.
-    NSRect imageBounds = NSMakeRect(0, 0, image.size.width, image.size.height);
-    
-    // create the new view.
-    imageCropView = [[ImageCropView alloc] initWithFrame:imageBounds];
-    [imageCropView setImage:image];
+    if ( [views count] == 0 )
+    {
+        toolViewController = [[ToolViewController alloc] initWithNibName:@"ToolView" bundle:nil];
+        [toolView addSubview:[toolViewController view]];
+    }
+}
+
+- (void) setImageManipulationView
+{
+    NSLog(@"asfasfas");
+    NSRect viewBounds = [self determineViewBounds];
+    imgManipView = [[ImageManipulationView alloc] initWithFrame:viewBounds];
+    [imgManipView setImage:representation.subject];
     
     // add the new view.
-    scrollView = [[NSScrollView alloc] initWithFrame:imageBounds];
+    scrollView = [[NSScrollView alloc] initWithFrame:viewBounds];
+    [scrollView setHasVerticalScroller:YES];
+    [scrollView setHasHorizontalScroller:YES];
+    [scrollView setDocumentView:imgManipView];
+    [containerView addSubview:scrollView];
+
+    [self addToolView];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(setCropView)
+                                                 name:@"CropImageToolSelection"
+                                               object:nil];
+}
+
+- (void) setCropView
+{
+    NSRect viewBounds = [self determineViewBounds];
     
+    [imgManipView removeFromSuperview];
+
+    imageCropView = [[ImageCropView alloc] initWithFrame:viewBounds];
+    [imageCropView setImage:representation.subject];
+
+    scrollView = [[NSScrollView alloc] initWithFrame:viewBounds];
     [scrollView setHasVerticalScroller:YES];
     [scrollView setHasHorizontalScroller:YES];
     
     [scrollView setDocumentView:imageCropView];
     [containerView addSubview:scrollView];
-//    [self.window setContentView:scrollView];
-    
-    [self addToolView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(imageFromCrop)
                                                  name:@"ImageCropComplete"
                                                object:nil];
     
-    // remove observer
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ImageUploadReciever" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CropImageToolSelection" object:nil];
 }
 
 - (void) imageFromCrop
 {
-    NSRect viewBounds;
-    int viewWidth;
-    int viewHeight;
+    representation.subject = [imageCropView croppedImage];
+    [imageCropView removeFromSuperview];
     
-    image = [imageCropView croppedImage];
-    
-    // update image crop view. scrollview etc.
-    NSRect imageBounds = NSMakeRect(0, 0, image.size.width, image.size.height);
-    
-    // create the new view.
-    imageCropView = [[ImageCropView alloc] initWithFrame:imageBounds];
-    [imageCropView setImage:image];
-    
-    NSLog(@"%f, %f", containerView.bounds.size.height, containerView.bounds.size.width);
-    NSLog(@"%f, %f", image.size.height, image.size.width);
-    
-    int containerHeight = containerView.bounds.size.height;
-    int containerWidth = containerView.bounds.size.width;
-    
-    if ( containerHeight > image.size.height )
-    {
-        viewHeight = containerHeight;
-    } else {
-        viewHeight = image.size.height;
-    }
-    
-    if ( containerWidth > image.size.width )
-    {
-        viewWidth = containerWidth;
-    } else {
-        viewWidth = image.size.width;
-    }
-
-    viewBounds = NSMakeRect(0, 0, viewWidth, viewHeight);
-    
-    // add the new view.
-    scrollView = [[NSScrollView alloc] initWithFrame:viewBounds];
-    
-    [scrollView setHasVerticalScroller:YES];
-    [scrollView setHasHorizontalScroller:YES];
-    
-    [scrollView setDocumentView:imageCropView];
-    [containerView addSubview:scrollView];
-//    [self.window setContentView:scrollView];
-    
-    NSBitmapImageRep* rep = [ImageRepresentation grayScaleRepresentationOfImage:image];
-    
-//    [ImageRepresentation saveImageFileFromRepresentation:rep fileName:@"Cropped"];
+    [self setImageManipulationView];
 }
 
 - (void) changeViewController:(NSString*)viewControllerKey
