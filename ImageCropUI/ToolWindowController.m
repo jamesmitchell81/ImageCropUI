@@ -6,28 +6,20 @@
 //  Copyright © 2016 James Mitchell. All rights reserved.
 //
 
-#import "ToolViewController.h"
+#import "ToolWindowController.h"
 #import "ImageProcessing.h"
+#import "ImageRepresentation.h"
 
-@implementation ToolViewController
+@implementation ToolWindowController
 
-@synthesize image;
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-//    self.view.layer.backgroundColor = [NSColor whiteColor].CGColor;
-}
+@synthesize representation;
 
 - (IBAction) applyAveragingFilter:(id)sender
 {
     int val = [sender intValue];
 
     ImageProcessing* imageProcessing = [[ImageProcessing alloc] init];
-    
-    NSBitmapImageRep* representation = [imageProcessing simpleAveragingFilterOfSize:val onImage:image];
-    
-    // send to 
+    NSBitmapImageRep* rep = [imageProcessing simpleAveragingFilterOfSize:val onImage:representation.subject];
 }
 
 - (IBAction) applyMedianFilter:(id)sender

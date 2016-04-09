@@ -8,9 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ToolViewController : NSViewController
+@class ImageRepresentation;
+
+@interface ToolWindowController : NSWindowController
 {
-    NSImage* image;
+    ImageRepresentation* representation;
     
     IBOutlet NSSlider *aveFilterSlider;
     IBOutlet NSSlider *medianFilterSlider;
@@ -29,7 +31,7 @@
     IBOutlet NSButton *crop;
 }
 
-@property NSImage* image;
+@property (nonatomic) ImageRepresentation* representation;
 
 - (IBAction) applyAveragingFilter:(id)sender;
 - (IBAction) applyMedianFilter:(id)sender;
