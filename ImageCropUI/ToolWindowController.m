@@ -19,7 +19,15 @@
     int val = [sender intValue];
 
     ImageProcessing* imageProcessing = [[ImageProcessing alloc] init];
-    NSBitmapImageRep* rep = [imageProcessing simpleAveragingFilterOfSize:val onImage:representation.subject];
+    representation.bitmaprep = [imageProcessing simpleAveragingFilterOfSize:val
+                                                                    onImage:representation.original];
+    
+    representation.subject = [ImageRepresentation cacheImageFromRepresentation:representation.bitmaprep];
+    
+    
+    NSLog(@"tvc: %@", representation.subject);
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
 }
 
 - (IBAction) applyMedianFilter:(id)sender

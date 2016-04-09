@@ -92,11 +92,18 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ImageUploadReciever" object:nil];
 }
 
+- (void) updateImage
+{
+//    NSLog(@"Updated");
+    [imgManipView setImage:representation.subject];
+    [imgManipView setNeedsDisplay:YES];
+}
 
 - (void) imageFromDropZone
 {
     representation = [[ImageRepresentation alloc] init];
-    representation.subject = [dropZoneView image];
+    [representation setSubject:[dropZoneView image]];
+    
     [dropZoneView removeFromSuperview];
 }
 
@@ -109,13 +116,18 @@
     }
     
     [toolViewController setRepresentation:representation];
+    [toolViewController setView:imgManipView];
 }
 
 - (void) setImageManipulationView
 {
+    
+    NSLog(@"mwc: %@", representation.subject);
+    
     NSRect viewBounds = [self determineViewBounds];
     imgManipView = [[ImageManipulationView alloc] initWithFrame:viewBounds];
     [imgManipView setImage:representation.subject];
+    [imgManipView setNeedsDisplay:YES];
     
     // add the new view.
     scrollView = [[NSScrollView alloc] initWithFrame:viewBounds];
@@ -130,8 +142,12 @@
     NSRect frame = [self.window frame];
     frame.size = viewBounds.size;
     [self.window setFrame:frame display:YES animate:NO];
-    
+   
     [self displayToolWindow];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateImage)
+                                                 name:@"ImageUpdateReciever"
+                                               object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(setCropView)
@@ -168,7 +184,7 @@
 
 - (void) imageFromCrop
 {
-    representation.subject = [imageCropView croppedImage];
+    [representation setSubject:[imageCropView croppedImage]];
     [imageCropView removeFromSuperview];
     
     [self setImageManipulationView];
