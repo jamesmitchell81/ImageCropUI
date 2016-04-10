@@ -9,10 +9,14 @@
 #import <Cocoa/Cocoa.h>
 
 @class ImageRepresentation;
+@class ImageProcessing;
+@class Morphology;
 
 @interface ToolWindowController : NSWindowController
 {
     ImageRepresentation* representation;
+    ImageProcessing* imageProcessing;
+    Morphology* morph;
     
     IBOutlet NSSlider *aveFilterSlider;
     IBOutlet NSSlider *medianFilterSlider;
@@ -45,5 +49,8 @@
 - (IBAction) switchPolarity:(id)sender;
 - (IBAction) thin:(id)sender;
 - (IBAction) crop:(id)sender;
+- (IBAction) resetImage:(id)sender;
+
+- (void) resetToOriginal;
 
 @end
