@@ -94,7 +94,6 @@
 
 - (void) updateImage
 {
-//    NSLog(@"Updated");
     [imgManipView setImage:representation.subject];
     [imgManipView setNeedsDisplay:YES];
 }
@@ -116,14 +115,10 @@
     }
     
     [toolViewController setRepresentation:representation];
-    [toolViewController setView:imgManipView];
 }
 
 - (void) setImageManipulationView
 {
-    
-    NSLog(@"mwc: %@", representation.subject);
-    
     NSRect viewBounds = [self determineViewBounds];
     imgManipView = [[ImageManipulationView alloc] initWithFrame:viewBounds];
     [imgManipView setImage:representation.subject];
