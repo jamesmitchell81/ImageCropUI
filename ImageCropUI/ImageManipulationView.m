@@ -10,8 +10,6 @@
 
 @implementation ImageManipulationView
 
-//@synthesize image;
-
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
