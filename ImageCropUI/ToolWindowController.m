@@ -19,7 +19,7 @@
 {
     int filterSize = [sender intValue];
     
-    NSLog(@"sender: %@", sender);
+    NSLog(@"ave: %d", filterSize);
 
     if ( filterSize != 0 )
     {
@@ -27,7 +27,6 @@
         {
             imageProcessing = [[ImageProcessing alloc] init];
         }
-        
         // apply the filter to the origianal image.
         NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
         [representation.subject removeRepresentation:rep];
@@ -44,7 +43,9 @@
 {
     int filterSize = [sender intValue];
     
-    if ( filterSize != 0 )
+    NSLog(@"med: %d", filterSize);
+    
+    if ( filterSize != 1 )
     {
         if ( !imageProcessing )
         {
@@ -62,12 +63,46 @@
 
 - (IBAction) applyMaxFilter:(id)sender
 {
+    int filterSize = [sender intValue];
     
+    NSLog(@"max: %d", filterSize);
+    
+    if ( filterSize != 1 )
+    {
+        if ( !imageProcessing )
+        {
+            imageProcessing =[[ImageProcessing alloc] init];
+        }
+        NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
+        [representation.subject removeRepresentation:rep];
+        [representation.subject addRepresentation:[imageProcessing maxFilterOfSize:filterSize onImage:representation.original]];
+    } else {
+        [self resetToOriginal];
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
 }
 
 - (IBAction) applyMinFilter:(id)sender
 {
+    int filterSize = [sender intValue];
     
+    NSLog(@"min: %d", filterSize);
+    
+    if ( filterSize != 1 )
+    {
+        if ( !imageProcessing )
+        {
+            imageProcessing =[[ImageProcessing alloc] init];
+        }
+        NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
+        [representation.subject removeRepresentation:rep];
+        [representation.subject addRepresentation:[imageProcessing minFilterOfSize:filterSize onImage:representation.original]];
+    } else {
+        [self resetToOriginal];
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
 }
 
 - (IBAction) threshold:(id)sender
@@ -127,7 +162,20 @@
 
 - (IBAction) resetImage:(id)sender
 {
-    // set sliders to default.
+    [aveFilterSlider setIntValue:0];
+    [medianFilterSlider setIntValue:0];
+    [maxFilterSlider setIntValue:0];
+    [minFilterSlider setIntValue:0];
+    
+    [thresholdSlider setIntValue:128];
+    
+    [erodeFilterSlider setIntValue:0];
+    [dilateFilterSlider setIntValue:0];
+    [openFilterSlider setIntValue:0];
+    [closeFilterSlider setIntValue:0];
+    
+    // cropped bit.
+    
     [self resetToOriginal];
 }
 
