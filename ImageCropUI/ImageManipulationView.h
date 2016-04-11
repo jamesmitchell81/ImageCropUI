@@ -10,8 +10,9 @@
 
 @interface ImageManipulationView : NSImageView
 {
-
+//    NSImage* image;
 }
 
+//@property (nonatomic) NSImage* image;
 
 @end

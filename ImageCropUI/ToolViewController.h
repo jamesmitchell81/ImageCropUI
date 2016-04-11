@@ -8,17 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class ImageRepresentation;
-@class ImageProcessing;
-@class Morphology;
-
-@interface ToolWindowController : NSWindowController
+@interface ToolViewController : NSViewController
 {
-    ImageRepresentation* representation;
-    ImageProcessing* imageProcessing;
-    Morphology* morph;
-    
-    NSMutableDictionary* operationOrder;
+    NSImage* image;
     
     IBOutlet NSSlider *aveFilterSlider;
     IBOutlet NSSlider *medianFilterSlider;
@@ -37,7 +29,7 @@
     IBOutlet NSButton *crop;
 }
 
-@property (nonatomic) ImageRepresentation* representation;
+@property NSImage* image;
 
 - (IBAction) applyAveragingFilter:(id)sender;
 - (IBAction) applyMedianFilter:(id)sender;
@@ -51,8 +43,5 @@
 - (IBAction) switchPolarity:(id)sender;
 - (IBAction) thin:(id)sender;
 - (IBAction) crop:(id)sender;
-- (IBAction) resetImage:(id)sender;
-
-- (void) resetToOriginal;
 
 @end
