@@ -45,7 +45,7 @@
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a2z-re-GMj">
                         <rect key="frame" x="169" y="556" width="168" height="27"/>
                         <animations/>
-                        <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="tfi-gI-wjR"/>
+                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="tfi-gI-wjR"/>
                         <connections>
                             <action selector="applyAveragingFilter:" target="-2" id="Vx9-VW-nPe"/>
                         </connections>
@@ -53,7 +53,7 @@
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOQ-Ty-k6v">
                         <rect key="frame" x="169" y="517" width="168" height="27"/>
                         <animations/>
-                        <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="35p-fi-qle"/>
+                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="35p-fi-qle"/>
                         <connections>
                             <action selector="applyMedianFilter:" target="-2" id="Gtm-tu-D5x"/>
                         </connections>
@@ -70,7 +70,7 @@
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enh-Z0-anX">
                         <rect key="frame" x="169" y="477" width="168" height="27"/>
                         <animations/>
-                        <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="a95-Vi-JEt"/>
+                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="a95-Vi-JEt"/>
                         <connections>
                             <action selector="applyMaxFilter:" target="-2" id="p3V-Fi-8Zn"/>
                         </connections>
@@ -87,7 +87,7 @@
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUD-yb-099">
                         <rect key="frame" x="169" y="434" width="168" height="27"/>
                         <animations/>
-                        <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="byG-lT-qmQ"/>
+                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="byG-lT-qmQ"/>
                         <connections>
                             <action selector="applyMinFilter:" target="-2" id="hPw-dv-7uN"/>
                         </connections>
@@ -213,7 +213,7 @@
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SgR-ap-svj">
                         <rect key="frame" x="169" y="371" width="168" height="27"/>
                         <animations/>
-                        <sliderCell key="cell" state="on" alignment="left" maxValue="255" doubleValue="128" tickMarkPosition="below" numberOfTickMarks="15" sliderType="linear" id="8JY-rc-fXt"/>
+                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="255" doubleValue="128" tickMarkPosition="below" numberOfTickMarks="15" sliderType="linear" id="8JY-rc-fXt"/>
                         <connections>
                             <action selector="threshold:" target="-2" id="a13-TL-H0f"/>
                         </connections>
@@ -233,7 +233,7 @@
                         <rect key="frame" x="38" y="39" width="118" height="32"/>
                         <animations/>
                         <buttonCell key="cell" type="push" title="Crop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4R8-Q1-Pdr">
-                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
@@ -254,7 +254,7 @@
                 </subviews>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="42.5" y="156.5"/>
+            <point key="canvasLocation" x="-48.5" y="84.5"/>
         </window>
     </objects>
 </document>
