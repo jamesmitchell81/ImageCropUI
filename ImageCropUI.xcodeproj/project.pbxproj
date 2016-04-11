@@ -17,7 +17,7 @@
 		887906541CB7BBDE00E21476 /* Morphology.m in Sources */ = {isa = PBXBuildFile; fileRef = 8879064F1CB7BBDE00E21476 /* Morphology.m */; };
 		887906551CB7BBDE00E21476 /* StructuringElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906511CB7BBDE00E21476 /* StructuringElement.m */; };
 		887906561CB7BBDE00E21476 /* ZhangSuenThin.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906531CB7BBDE00E21476 /* ZhangSuenThin.m */; };
-		8879065F1CB7ED6900E21476 /* ToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8879065E1CB7ED6900E21476 /* ToolViewController.m */; };
+		8879065F1CB7ED6900E21476 /* ToolWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8879065E1CB7ED6900E21476 /* ToolWindowController.m */; };
 		887906611CB7F9DD00E21476 /* ToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887906601CB7F9DD00E21476 /* ToolView.xib */; };
 		88F4961B1C527EA000D35B48 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F496191C527EA000D35B48 /* MainWindowController.m */; };
 		88F4961C1C527EA000D35B48 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88F4961A1C527EA000D35B48 /* MainWindow.xib */; };
@@ -68,8 +68,8 @@
 		887906511CB7BBDE00E21476 /* StructuringElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StructuringElement.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/StructuringElement.m; sourceTree = "<group>"; };
 		887906521CB7BBDE00E21476 /* ZhangSuenThin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZhangSuenThin.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/ZhangSuenThin.h; sourceTree = "<group>"; };
 		887906531CB7BBDE00E21476 /* ZhangSuenThin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZhangSuenThin.m; path = ../../ImageProcessingCLI/ImageProcessingCLI/ZhangSuenThin.m; sourceTree = "<group>"; };
-		8879065D1CB7ED6900E21476 /* ToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolViewController.h; sourceTree = "<group>"; };
-		8879065E1CB7ED6900E21476 /* ToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolViewController.m; sourceTree = "<group>"; };
+		8879065D1CB7ED6900E21476 /* ToolWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolWindowController.h; sourceTree = "<group>"; };
+		8879065E1CB7ED6900E21476 /* ToolWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolWindowController.m; sourceTree = "<group>"; };
 		887906601CB7F9DD00E21476 /* ToolView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolView.xib; sourceTree = "<group>"; };
 		88F496181C527EA000D35B48 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		88F496191C527EA000D35B48 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
@@ -237,8 +237,8 @@
 				88F496191C527EA000D35B48 /* MainWindowController.m */,
 				88F807FA1C515F68001A7B3A /* ViewController.h */,
 				88F807FB1C515F68001A7B3A /* ViewController.m */,
-				8879065D1CB7ED6900E21476 /* ToolViewController.h */,
-				8879065E1CB7ED6900E21476 /* ToolViewController.m */,
+				8879065D1CB7ED6900E21476 /* ToolWindowController.h */,
+				8879065E1CB7ED6900E21476 /* ToolWindowController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -384,7 +384,7 @@
 				887906541CB7BBDE00E21476 /* Morphology.m in Sources */,
 				88F807F91C515F68001A7B3A /* main.m in Sources */,
 				88F807F61C515F68001A7B3A /* AppDelegate.m in Sources */,
-				8879065F1CB7ED6900E21476 /* ToolViewController.m in Sources */,
+				8879065F1CB7ED6900E21476 /* ToolWindowController.m in Sources */,
 				88F4961B1C527EA000D35B48 /* MainWindowController.m in Sources */,
 				8805E5791C57D8CA00A4D60B /* DropZoneView.m in Sources */,
 				8879064B1CB7BBC800E21476 /* ImageRepresentation.m in Sources */,
