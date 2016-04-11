@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="ToolWindowController">
+        <customObject id="-2" userLabel="File's Owner" customClass="ToolViewController">
             <connections>
                 <outlet property="aveFilterSlider" destination="a2z-re-GMj" id="6oo-lJ-7y6"/>
                 <outlet property="closeFilterSlider" destination="aCi-8K-ocy" id="HbJ-sf-TDm"/>
@@ -19,242 +19,239 @@
                 <outlet property="polaritySwitch" destination="QlH-Qu-urB" id="o2K-Sg-7Qz"/>
                 <outlet property="thin" destination="LXA-jc-MGC" id="zER-S9-kRV"/>
                 <outlet property="thresholdSlider" destination="SgR-ap-svj" id="9nU-5B-7Ca"/>
-                <outlet property="window" destination="8SU-WB-JiF" id="6Cc-62-BJC"/>
+                <outlet property="view" destination="a7Q-DC-7Ku" id="oGM-gi-Y69"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Tools" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="8SU-WB-JiF" customClass="NSPanel">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" HUD="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="116" width="365" height="601"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
-            <view key="contentView" id="brm-AD-Dim">
-                <rect key="frame" x="0.0" y="0.0" width="365" height="601"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="soW-iJ-YyS">
-                        <rect key="frame" x="30" y="564" width="109" height="17"/>
-                        <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Averaging Filter" id="cN5-DJ-B64">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a2z-re-GMj">
-                        <rect key="frame" x="169" y="556" width="168" height="27"/>
-                        <animations/>
-                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="tfi-gI-wjR"/>
-                        <connections>
-                            <action selector="applyAveragingFilter:" target="-2" id="Vx9-VW-nPe"/>
-                        </connections>
-                    </slider>
-                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOQ-Ty-k6v">
-                        <rect key="frame" x="169" y="517" width="168" height="27"/>
-                        <animations/>
-                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="35p-fi-qle"/>
-                        <connections>
-                            <action selector="applyMedianFilter:" target="-2" id="Gtm-tu-D5x"/>
-                        </connections>
-                    </slider>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fTE-uo-tyh">
-                        <rect key="frame" x="30" y="525" width="109" height="17"/>
-                        <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Median Filter" id="pm0-EH-bln">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enh-Z0-anX">
-                        <rect key="frame" x="169" y="477" width="168" height="27"/>
-                        <animations/>
-                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="a95-Vi-JEt"/>
-                        <connections>
-                            <action selector="applyMaxFilter:" target="-2" id="p3V-Fi-8Zn"/>
-                        </connections>
-                    </slider>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cGM-bg-9QM">
-                        <rect key="frame" x="30" y="485" width="109" height="17"/>
-                        <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Max Filter" id="WLJ-bV-Hlj">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUD-yb-099">
-                        <rect key="frame" x="169" y="434" width="168" height="27"/>
-                        <animations/>
-                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="byG-lT-qmQ"/>
-                        <connections>
-                            <action selector="applyMinFilter:" target="-2" id="hPw-dv-7uN"/>
-                        </connections>
-                    </slider>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W71-Do-B4x">
-                        <rect key="frame" x="30" y="442" width="109" height="17"/>
-                        <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Min Filter" id="mdu-eS-1WI">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Zoe-2t-oxg">
-                        <rect key="frame" x="20" y="408" width="325" height="5"/>
-                        <animations/>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" metaFont="system"/>
-                    </box>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nNs-WA-fIT">
-                        <rect key="frame" x="30" y="376" width="84" height="17"/>
-                        <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Thresholding" id="Sgi-69-KFf">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Dof-X8-NoW">
-                        <rect key="frame" x="20" y="354" width="325" height="5"/>
-                        <animations/>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" metaFont="system"/>
-                    </box>
-                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qGM-iM-4Aa">
-                        <rect key="frame" x="169" y="312" width="168" height="27"/>
-                        <animations/>
-                        <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="W48-d7-zkT"/>
-                        <connections>
-                            <action selector="erode:" target="-2" id="GkV-F5-Zhq"/>
-                        </connections>
-                    </slider>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MtG-4l-2oc">
-                        <rect key="frame" x="30" y="320" width="40" height="17"/>
-                        <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Erode" id="C2i-6V-cHu">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tEf-hn-BIL">
-                        <rect key="frame" x="169" y="267" width="168" height="27"/>
-                        <animations/>
-                        <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="E5z-iR-VSK"/>
-                        <connections>
-                            <action selector="dilate:" target="-2" id="KH5-wR-irp"/>
-                        </connections>
-                    </slider>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqd-0R-JOl">
-                        <rect key="frame" x="30" y="275" width="39" height="17"/>
-                        <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Dilate" id="dU0-1f-L3P">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SLl-XR-7T1">
-                        <rect key="frame" x="169" y="221" width="168" height="27"/>
-                        <animations/>
-                        <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="qeA-OW-jPp"/>
-                        <connections>
-                            <action selector="open:" target="-2" id="8Wb-ln-X18"/>
-                        </connections>
-                    </slider>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiT-fF-Kj5">
-                        <rect key="frame" x="30" y="229" width="37" height="17"/>
-                        <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Open" id="s9e-EF-ftA">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCi-8K-ocy">
-                        <rect key="frame" x="169" y="177" width="168" height="27"/>
-                        <animations/>
-                        <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="xfx-xz-F4O"/>
-                        <connections>
-                            <action selector="close:" target="-2" id="bbG-NR-lYp"/>
-                        </connections>
-                    </slider>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3KP-o9-G0C">
-                        <rect key="frame" x="31" y="185" width="39" height="17"/>
-                        <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Close" id="vLJ-iy-o7L">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="wM3-rS-jZp">
-                        <rect key="frame" x="20" y="154" width="325" height="5"/>
-                        <animations/>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" metaFont="system"/>
-                    </box>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXA-jc-MGC">
-                        <rect key="frame" x="194" y="98" width="118" height="32"/>
-                        <animations/>
-                        <buttonCell key="cell" type="push" title="Thin" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zQj-k3-dFa">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="thin:" target="-2" id="ePo-El-aAs"/>
-                        </connections>
-                    </button>
-                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SgR-ap-svj">
-                        <rect key="frame" x="169" y="371" width="168" height="27"/>
-                        <animations/>
-                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="255" doubleValue="128" tickMarkPosition="below" numberOfTickMarks="15" sliderType="linear" id="8JY-rc-fXt"/>
-                        <connections>
-                            <action selector="threshold:" target="-2" id="a13-TL-H0f"/>
-                        </connections>
-                    </slider>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gCy-cJ-jHh">
-                        <rect key="frame" x="194" y="39" width="118" height="32"/>
-                        <animations/>
-                        <buttonCell key="cell" type="push" title="Reset Image" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="F1U-UY-Ob2">
-                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="resetImage:" target="-2" id="0kI-fG-NNp"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-6t-EnX">
-                        <rect key="frame" x="38" y="39" width="118" height="32"/>
-                        <animations/>
-                        <buttonCell key="cell" type="push" title="Crop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4R8-Q1-Pdr">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="crop:" target="-2" id="njT-5y-H2e"/>
-                        </connections>
-                    </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QlH-Qu-urB">
-                        <rect key="frame" x="38" y="98" width="118" height="32"/>
-                        <animations/>
-                        <buttonCell key="cell" type="push" title="Switch Polarity" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hTQ-h9-vkd">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="switchPolarity:" target="-2" id="4BF-5v-azJ"/>
-                        </connections>
-                    </button>
-                </subviews>
-                <animations/>
-            </view>
-            <point key="canvasLocation" x="-48.5" y="84.5"/>
-        </window>
+        <customView id="a7Q-DC-7Ku">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="575"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Zoe-2t-oxg">
+                    <rect key="frame" x="20" y="389" width="302" height="5"/>
+                    <animations/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="soW-iJ-YyS">
+                    <rect key="frame" x="28" y="532" width="109" height="17"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Averaging Filter" id="cN5-DJ-B64">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nNs-WA-fIT">
+                    <rect key="frame" x="28" y="358" width="84" height="17"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Thresholding" id="Sgi-69-KFf">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MtG-4l-2oc">
+                    <rect key="frame" x="28" y="306" width="40" height="17"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Erode" id="C2i-6V-cHu">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SgR-ap-svj">
+                    <rect key="frame" x="141" y="350" width="168" height="27"/>
+                    <animations/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="255" doubleValue="128" tickMarkPosition="below" numberOfTickMarks="15" sliderType="linear" id="8JY-rc-fXt"/>
+                    <connections>
+                        <action selector="threshold:" target="-2" id="a13-TL-H0f"/>
+                    </connections>
+                </slider>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qGM-iM-4Aa">
+                    <rect key="frame" x="142" y="300" width="168" height="27"/>
+                    <animations/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="W48-d7-zkT"/>
+                    <connections>
+                        <action selector="erode:" target="-2" id="GkV-F5-Zhq"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqd-0R-JOl">
+                    <rect key="frame" x="28" y="268" width="39" height="17"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Dilate" id="dU0-1f-L3P">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tEf-hn-BIL">
+                    <rect key="frame" x="142" y="262" width="168" height="27"/>
+                    <animations/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="E5z-iR-VSK"/>
+                    <connections>
+                        <action selector="dilate:" target="-2" id="KH5-wR-irp"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiT-fF-Kj5">
+                    <rect key="frame" x="27" y="229" width="37" height="17"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Open" id="s9e-EF-ftA">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SLl-XR-7T1">
+                    <rect key="frame" x="141" y="223" width="168" height="27"/>
+                    <animations/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="qeA-OW-jPp"/>
+                    <connections>
+                        <action selector="open:" target="-2" id="8Wb-ln-X18"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3KP-o9-G0C">
+                    <rect key="frame" x="27" y="190" width="39" height="17"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Close" id="vLJ-iy-o7L">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCi-8K-ocy">
+                    <rect key="frame" x="141" y="184" width="168" height="27"/>
+                    <animations/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="xfx-xz-F4O"/>
+                    <connections>
+                        <action selector="close:" target="-2" id="bbG-NR-lYp"/>
+                    </connections>
+                </slider>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a2z-re-GMj">
+                    <rect key="frame" x="141" y="524" width="168" height="27"/>
+                    <animations/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="tfi-gI-wjR"/>
+                    <connections>
+                        <action selector="applyAveragingFilter:" target="-2" id="Vx9-VW-nPe"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fTE-uo-tyh">
+                    <rect key="frame" x="28" y="494" width="109" height="17"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Median Filter" id="pm0-EH-bln">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOQ-Ty-k6v">
+                    <rect key="frame" x="141" y="485" width="168" height="27"/>
+                    <animations/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="35p-fi-qle"/>
+                    <connections>
+                        <action selector="applyMedianFilter:" target="-2" id="Gtm-tu-D5x"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cGM-bg-9QM">
+                    <rect key="frame" x="28" y="455" width="109" height="17"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Max Filter" id="WLJ-bV-Hlj">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enh-Z0-anX">
+                    <rect key="frame" x="141" y="449" width="168" height="27"/>
+                    <animations/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="a95-Vi-JEt"/>
+                    <connections>
+                        <action selector="applyMaxFilter:" target="-2" id="p3V-Fi-8Zn"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W71-Do-B4x">
+                    <rect key="frame" x="28" y="414" width="109" height="17"/>
+                    <animations/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Min Filter" id="mdu-eS-1WI">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUD-yb-099">
+                    <rect key="frame" x="141" y="406" width="168" height="27"/>
+                    <animations/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="9" tickMarkPosition="below" numberOfTickMarks="4" allowsTickMarkValuesOnly="YES" sliderType="linear" id="byG-lT-qmQ"/>
+                    <connections>
+                        <action selector="applyMinFilter:" target="-2" id="hPw-dv-7uN"/>
+                    </connections>
+                </slider>
+                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Dof-X8-NoW">
+                    <rect key="frame" x="20" y="337" width="302" height="5"/>
+                    <animations/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="wM3-rS-jZp">
+                    <rect key="frame" x="20" y="168" width="302" height="5"/>
+                    <animations/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="zI2-vC-MZa">
+                    <rect key="frame" x="20" y="60" width="302" height="5"/>
+                    <animations/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="tdA-rc-J8m">
+                    <rect key="frame" x="20" y="113" width="302" height="5"/>
+                    <animations/>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <font key="titleFont" metaFont="system"/>
+                </box>
+                <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXA-jc-MGC">
+                    <rect key="frame" x="84" y="66" width="177" height="43"/>
+                    <animations/>
+                    <buttonCell key="cell" type="push" title="Thin" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zQj-k3-dFa">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="thin:" target="-2" id="ePo-El-aAs"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-6t-EnX">
+                    <rect key="frame" x="84" y="15" width="177" height="32"/>
+                    <animations/>
+                    <buttonCell key="cell" type="push" title="Crop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4R8-Q1-Pdr">
+                        <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="crop:" target="-2" id="njT-5y-H2e"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QlH-Qu-urB">
+                    <rect key="frame" x="84" y="112" width="183" height="51"/>
+                    <animations/>
+                    <buttonCell key="cell" type="push" title="Switch Polarity" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hTQ-h9-vkd">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="switchPolarity:" target="-2" id="4BF-5v-azJ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <point key="canvasLocation" x="33.5" y="262.5"/>
+        </customView>
     </objects>
 </document>

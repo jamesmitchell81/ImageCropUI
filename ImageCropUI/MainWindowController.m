@@ -10,7 +10,7 @@
 #import "DropZoneView.h"
 #import "ImageCropView.h"
 #import "ImageManipulationView.h"
-#import "ToolWindowController.h"
+#import "ToolViewController.h"
 
 #import "ImageRepresentation.h"
 
@@ -25,11 +25,6 @@
 
 - (void)awakeFromNib
 {
-    // REFERENCE: stackoverflow.com/questions/25250762/xcode-swift-window-without-title-bar-but-with-close-minimize-and-resize-but
-    self.window.titleVisibility = NSWindowTitleHidden;
-    self.window.titlebarAppearsTransparent = YES;
-    self.window.styleMask |= NSFullSizeContentViewWindowMask;
-    
     [self changeToDropZoneController];
 //    [self addToolView];
 }
@@ -50,7 +45,9 @@
                                              selector:@selector(handleDroppedImage)
                                                  name:@"ImageUploadReciever"
                                                object:nil];
-
+    
+    // resize to fit.
+//    [[self.currentViewController view] setFrame:[containerView bounds]];
 }
 
 /*
@@ -63,25 +60,31 @@
     int viewWidth;
     int viewHeight;
     
-    int maxWidth = 1000;
-    int maxHeight = 1000;
+    NSLog(@"%@, %f, %f", @"container bounds", containerView.bounds.size.height, containerView.bounds.size.width);
+    NSLog(@"%@, %f, %f", @"Image Bounds", representation.subject.size.height, representation.subject.size.width);
     
-    if ( maxHeight < representation.subject.size.height )
+    int containerHeight = containerView.bounds.size.height;
+    int containerWidth = containerView.bounds.size.width;
+    
+    if ( containerHeight > representation.subject.size.height )
     {
-        viewHeight = maxHeight;
+        viewHeight = containerHeight;
     } else {
         viewHeight = representation.subject.size.height;
     }
     
-    if ( maxWidth < representation.subject.size.width )
+    if ( containerWidth > representation.subject.size.width )
     {
-        viewWidth = maxWidth;
+        viewWidth = containerWidth;
     } else {
         viewWidth = representation.subject.size.width;
     }
     
     viewBounds = NSMakeRect(0, 0, viewWidth, viewHeight);
-
+    
+    // temp
+    viewBounds = NSMakeRect(0, 0, containerWidth, containerHeight);
+    
     return viewBounds;
 }
 
@@ -92,58 +95,41 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ImageUploadReciever" object:nil];
 }
 
-- (void) updateImage
-{
-    [imgManipView setImage:representation.subject];
-    [imgManipView setNeedsDisplay:YES];
-}
 
 - (void) imageFromDropZone
 {
     representation = [[ImageRepresentation alloc] init];
-    [representation setSubject:[dropZoneView image]];
-    
+    representation.subject = [dropZoneView image];
     [dropZoneView removeFromSuperview];
 }
 
-- (void) displayToolWindow
+- (void) addToolView
 {
-    if ( !toolViewController )
-    {
-        toolViewController = [[ToolWindowController alloc] initWithWindowNibName:@"ToolView"];
-        [toolViewController showWindow:nil];
-    }
+    NSArray* views = [toolView subviews];
     
-    [toolViewController setRepresentation:representation];
+    if ( [views count] == 0 )
+    {
+        toolViewController = [[ToolViewController alloc] initWithNibName:@"ToolView" bundle:nil];
+        [toolView addSubview:[toolViewController view]];
+    }
 }
 
 - (void) setImageManipulationView
 {
+    NSLog(@"asfasfas");
     NSRect viewBounds = [self determineViewBounds];
     imgManipView = [[ImageManipulationView alloc] initWithFrame:viewBounds];
     [imgManipView setImage:representation.subject];
-    [imgManipView setNeedsDisplay:YES];
     
     // add the new view.
     scrollView = [[NSScrollView alloc] initWithFrame:viewBounds];
     [scrollView setHasVerticalScroller:YES];
     [scrollView setHasHorizontalScroller:YES];
     [scrollView setDocumentView:imgManipView];
-    
-    [containerView setBounds:viewBounds];
     [containerView addSubview:scrollView];
-    [self.window setContentView:scrollView];
-    
-    NSRect frame = [self.window frame];
-    frame.size = viewBounds.size;
-    [self.window setFrame:frame display:YES animate:NO];
-   
-    [self displayToolWindow];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(updateImage)
-                                                 name:@"ImageUpdateReciever"
-                                               object:nil];
-    
+
+    [self addToolView];
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(setCropView)
                                                  name:@"CropImageToolSelection"
@@ -165,21 +151,18 @@
     
     [scrollView setDocumentView:imageCropView];
     [containerView addSubview:scrollView];
-    [self.window setContentView:scrollView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(imageFromCrop)
                                                  name:@"ImageCropComplete"
                                                object:nil];
     
-    [[NSApp mainWindow] makeKeyWindow];
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"CropImageToolSelection" object:nil];
 }
 
 - (void) imageFromCrop
 {
-    [representation setSubject:[imageCropView croppedImage]];
+    representation.subject = [imageCropView croppedImage];
     [imageCropView removeFromSuperview];
     
     [self setImageManipulationView];
