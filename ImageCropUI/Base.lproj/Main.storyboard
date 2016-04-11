@@ -55,23 +55,29 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="File" id="vGA-PE-whq">
+                            <menuItem title="File" id="0tU-yr-xCG">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="File" id="suo-Y8-aEX">
+                                <menu key="submenu" title="File" id="4zg-mI-5Wq">
                                     <items>
-                                        <menuItem title="Close" keyEquivalent="w" id="WFo-V4-bSP">
+                                        <menuItem title="New" keyEquivalent="n" id="E5n-oB-Wai">
                                             <connections>
-                                                <action selector="performClose:" target="Ady-hI-5gd" id="Grq-z4-WuD"/>
+                                                <action selector="newDocument:" target="Ady-hI-5gd" id="cMy-eg-Ymv"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Save" keyEquivalent="s" id="nYc-ZM-Kxt">
+                                        <menuItem isSeparatorItem="YES" id="MLB-xc-YFg"/>
+                                        <menuItem title="Close" keyEquivalent="w" id="7Rk-bi-vyI">
                                             <connections>
-                                                <action selector="saveDocument:" target="Ady-hI-5gd" id="7we-Jd-M6o"/>
+                                                <action selector="performClose:" target="Ady-hI-5gd" id="Npd-l5-RZc"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Save As…" keyEquivalent="S" id="SNd-3d-oYt">
+                                        <menuItem title="Save" keyEquivalent="s" id="SmY-0l-Xc2">
                                             <connections>
-                                                <action selector="saveDocumentAs:" target="Ady-hI-5gd" id="aqH-SG-AxW"/>
+                                                <action selector="saveDocument:" target="Ady-hI-5gd" id="lAX-iC-8Zh"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Save As…" keyEquivalent="S" id="Avn-ga-c8O">
+                                            <connections>
+                                                <action selector="saveDocumentAs:" target="Ady-hI-5gd" id="FgJ-uc-bs8"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -99,7 +105,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12.5" y="-4"/>
+            <point key="canvasLocation" x="-34.5" y="-4"/>
         </scene>
     </scenes>
 </document>
