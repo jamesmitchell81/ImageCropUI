@@ -31,13 +31,16 @@
         [maxFilterSlider setIntValue:1];
         [minFilterSlider setIntValue:1];
         
+        // reset the filter.
+        representation.filtered = nil;
+        
         // apply the filter to the origianal image.
         NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
         [representation.subject removeRepresentation:rep];
-        [representation.subject addRepresentation:[imageProcessing simpleAveragingFilterOfSize:filterSize onImage:representation.original]];
+        [representation.subject addRepresentation:[imageProcessing simpleAveragingFilterOfSize:filterSize onImage:representation.current]];
     } else {
-        // reset to the origianl. i.e. remove the filter.
-        [self resetToOriginal];
+        representation.subject = [[NSImage alloc] init];
+        [representation.subject addRepresentation:[ImageRepresentation grayScaleRepresentationOfImage:representation.current]];
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
@@ -59,11 +62,15 @@
         [maxFilterSlider setIntValue:1];
         [minFilterSlider setIntValue:1];
         
+        // reset the filter.
+        representation.filtered = nil;
+        
         NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
         [representation.subject removeRepresentation:rep];
-        [representation.subject addRepresentation:[imageProcessing medianFilterOfSize:filterSize onImage:representation.original]];
+        [representation.subject addRepresentation:[imageProcessing medianFilterOfSize:filterSize onImage:representation.current]];
     } else {
-        [self resetToOriginal];
+        representation.subject = [[NSImage alloc] init];
+        [representation.subject addRepresentation:[ImageRepresentation grayScaleRepresentationOfImage:representation.current]];
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
@@ -77,7 +84,7 @@
     {
         if ( !imageProcessing )
         {
-            imageProcessing =[[ImageProcessing alloc] init];
+            imageProcessing = [[ImageProcessing alloc] init];
         }
         
         // set other filters to 1
@@ -85,11 +92,15 @@
         [medianFilterSlider setIntValue:1];
         [minFilterSlider setIntValue:1];
         
+        // reset the filter.
+        representation.filtered = nil;
+        
         NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
         [representation.subject removeRepresentation:rep];
-        [representation.subject addRepresentation:[imageProcessing maxFilterOfSize:filterSize onImage:representation.original]];
+        [representation.subject addRepresentation:[imageProcessing maxFilterOfSize:filterSize onImage:representation.current]];
     } else {
-        [self resetToOriginal];
+        representation.subject = [[NSImage alloc] init];
+        [representation.subject addRepresentation:[ImageRepresentation grayScaleRepresentationOfImage:representation.current]];
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
@@ -111,13 +122,17 @@
         [medianFilterSlider setIntValue:1];
         [maxFilterSlider setIntValue:1];
         
+        // reset the filter.
+        representation.filtered = nil;
+        
         NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
         [representation.subject removeRepresentation:rep];
-        [representation.subject addRepresentation:[imageProcessing minFilterOfSize:filterSize onImage:representation.original]];
+        [representation.subject addRepresentation:[imageProcessing minFilterOfSize:filterSize onImage:representation.current]];
     } else {
-        [self resetToOriginal];
+        representation.subject = [[NSImage alloc] init];
+        [representation.subject addRepresentation:[ImageRepresentation grayScaleRepresentationOfImage:representation.current]];
     }
-    
+
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
 }
 
@@ -130,7 +145,13 @@
         imageProcessing = [[ImageProcessing alloc] init];
     }
     
-    NSBitmapImageRep* newRep = [imageProcessing threshold:representation.original atValue:thresholdValue];
+    if ( !representation.filtered )
+    {
+        NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
+        representation.filtered = [ImageRepresentation cacheImageFromRepresentation:(NSBitmapImageRep*)rep];
+    }
+    
+    NSBitmapImageRep* newRep = [imageProcessing threshold:representation.filtered atValue:thresholdValue];
     NSImageRep* oldRep = [representation.subject.representations objectAtIndex:0];
     [representation.subject removeRepresentation:oldRep];
     [representation.subject addRepresentation:newRep];
@@ -172,6 +193,7 @@
 
 - (IBAction) crop:(id)sender
 {
+    representation.filtered = nil;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"CropImageToolSelection" object:self];
 }
 
@@ -196,10 +218,8 @@
 
 - (void) resetToOriginal
 {
-    NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
-    [representation.subject removeRepresentation:rep];
-    [representation.subject addRepresentation:[ImageRepresentation grayScaleRepresentationOfImage:representation.original]];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
+    [representation resetSubject];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ResetOriginalImage" object:self];
 }
 
 @end
