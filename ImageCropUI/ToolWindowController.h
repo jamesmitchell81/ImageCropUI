@@ -53,6 +53,9 @@
 - (IBAction) crop:(id)sender;
 - (IBAction) resetImage:(id)sender;
 
+- (IBAction) pinCurrent:(id)sender;
+
+
 - (void) resetToOriginal;
 
 @end

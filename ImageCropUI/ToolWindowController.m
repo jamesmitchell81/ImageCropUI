@@ -40,8 +40,7 @@
         [representation.subject removeRepresentation:rep];
         [representation.subject addRepresentation:[imageProcessing simpleAveragingFilterOfSize:filterSize onImage:representation.current]];
     } else {
-        representation.subject = [[NSImage alloc] init];
-        [representation.subject addRepresentation:[ImageRepresentation grayScaleRepresentationOfImage:representation.current]];
+        [representation setSubject:representation.current];
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
@@ -70,8 +69,7 @@
         [representation.subject removeRepresentation:rep];
         [representation.subject addRepresentation:[imageProcessing medianFilterOfSize:filterSize onImage:representation.current]];
     } else {
-        representation.subject = [[NSImage alloc] init];
-        [representation.subject addRepresentation:[ImageRepresentation grayScaleRepresentationOfImage:representation.current]];
+        [representation setSubject:representation.current];
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
@@ -100,8 +98,7 @@
         [representation.subject removeRepresentation:rep];
         [representation.subject addRepresentation:[imageProcessing maxFilterOfSize:filterSize onImage:representation.current]];
     } else {
-        representation.subject = [[NSImage alloc] init];
-        [representation.subject addRepresentation:[ImageRepresentation grayScaleRepresentationOfImage:representation.current]];
+        [representation setSubject:representation.current];
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
@@ -130,8 +127,7 @@
         [representation.subject removeRepresentation:rep];
         [representation.subject addRepresentation:[imageProcessing minFilterOfSize:filterSize onImage:representation.current]];
     } else {
-        representation.subject = [[NSImage alloc] init];
-        [representation.subject addRepresentation:[ImageRepresentation grayScaleRepresentationOfImage:representation.current]];
+        [representation setSubject:representation.current];
     }
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
@@ -157,43 +153,102 @@
     [representation.subject removeRepresentation:oldRep];
     [representation.subject addRepresentation:newRep];
     
+    [representation setCurrent:representation.subject];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
 }
 
-
 - (IBAction) erode:(id)sender
 {
-    morph = [[Morphology alloc] init];
+    int size = [sender intValue];
     
-    NSBitmapImageRep* newRep = [morph simpleErosionOfImage:representation.subject];
-    NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
-    [representation.subject removeRepresentation:rep];
-    [representation.subject addRepresentation:newRep];
+    if ( size != 1 ) {
+        
+        if ( !morph )
+        {
+            morph = [[Morphology alloc] init];
+        }
+        
+//        representation.filtered = nil;
+        
+        NSBitmapImageRep* newRep = [morph simpleErosionOfImage:representation.current ofSize:size];
+        NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
+        [representation.subject removeRepresentation:rep];
+        [representation.subject addRepresentation:newRep];
+    } else {
+        [representation setSubject:representation.current];
+    }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
 }
 
 - (IBAction) dilate:(id)sender
 {
-    morph = [[Morphology alloc] init];
+    int size = [sender intValue];
     
-    NSBitmapImageRep* newRep = [morph simpleDilationOfImage:representation.subject];
-    NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
-    [representation.subject removeRepresentation:rep];
-    [representation.subject addRepresentation:newRep];
+    if ( size != 1 ) {
+        
+        if ( !morph )
+        {
+            morph = [[Morphology alloc] init];
+        }
+        
+        NSBitmapImageRep* newRep = [morph simpleDilationOfImage:representation.current ofSize:size];
+        NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
+        [representation.subject removeRepresentation:rep];
+        [representation.subject addRepresentation:newRep];
+    } else {
+        [representation setSubject:representation.current];
+    }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
 }
 
 - (IBAction) open:(id)sender
 {
+    int size = [sender intValue];
     
+    if ( size != 1 ) {
+        
+        if ( !morph )
+        {
+            morph = [[Morphology alloc] init];
+        }
+        
+        NSBitmapImageRep* newRep = [morph opening:representation.current ofSize:size];
+        NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
+        [representation.subject removeRepresentation:rep];
+        [representation.subject addRepresentation:newRep];
+    } else {
+        [representation setSubject:representation.current];
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
 }
 
 
 - (IBAction) close:(id)sender
 {
+    int size = [sender intValue];
     
+    if ( size != 1 ) {
+        
+        if ( !morph )
+        {
+            morph = [[Morphology alloc] init];
+        }
+        
+        NSBitmapImageRep* newRep = [morph closing:representation.current ofSize:size];
+        NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
+        [representation.subject removeRepresentation:rep];
+        [representation.subject addRepresentation:newRep];
+    } else {
+        [representation setSubject:representation.current];
+    }
+    
+    NSLog(@"%d", size);
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
 }
 
 - (IBAction) switchPolarity:(id)sender
@@ -239,6 +294,13 @@
     
     [self resetToOriginal];
 }
+
+- (IBAction) pinCurrent:(id)sender
+{
+    [representation setCurrent:representation.subject];
+}
+
+
 
 - (void) resetToOriginal
 {
