@@ -102,6 +102,8 @@
 {
     representation = [[ImageRepresentation alloc] init];
     [representation setSubject:[dropZoneView image]];
+    [representation setOriginal:[dropZoneView image]];
+    [representation setCurrent:[dropZoneView image]];
     
     [dropZoneView removeFromSuperview];
 }
@@ -148,6 +150,11 @@
                                              selector:@selector(setCropView)
                                                  name:@"CropImageToolSelection"
                                                object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(setImageManipulationView)
+                                                 name:@"ResetOriginalImage"
+                                               object:nil];
 }
 
 - (void) setCropView
@@ -180,6 +187,7 @@
 - (void) imageFromCrop
 {
     [representation setSubject:[imageCropView croppedImage]];
+    [representation setCurrent:[imageCropView croppedImage]];
     [imageCropView removeFromSuperview];
     
     [self setImageManipulationView];
