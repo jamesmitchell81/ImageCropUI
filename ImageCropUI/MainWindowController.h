@@ -7,12 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "DropZoneView.h"
 
 @class DropZoneView;
 @class ImageCropView;
 @class ImageManipulationView;
-@class ToolViewController;
+@class ToolWindowController;
 @class ImageRepresentation;
 
 @interface MainWindowController : NSWindowController
@@ -22,7 +21,7 @@
     
     IBOutlet NSView* containerView;
     IBOutlet NSView* toolView;
-    ToolViewController* toolViewController;
+    ToolWindowController* toolViewController;
     
     // collection of the view controllers.
     NSMutableDictionary* viewControllerNames;
@@ -44,7 +43,7 @@
 - (NSRect) determineViewBounds;
 - (void) handleDroppedImage;
 - (void) imageFromDropZone;
-- (void) addToolView;
+- (void) displayToolWindow;
 - (void) setImageManipulationView;
 - (void) setCropView;
 

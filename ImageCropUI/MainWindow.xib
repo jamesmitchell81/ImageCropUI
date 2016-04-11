@@ -8,7 +8,6 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController">
             <connections>
                 <outlet property="containerView" destination="34k-7I-YKt" id="n3e-ec-bri"/>
-                <outlet property="toolView" destination="ywe-yJ-OdO" id="ZIP-SC-aed"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -17,18 +16,14 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="34" y="198" width="1024" height="577"/>
+            <rect key="contentRect" x="556" y="360" width="814" height="632"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="1024" height="577"/>
+                <rect key="frame" x="0.0" y="0.0" width="814" height="632"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34k-7I-YKt">
-                        <rect key="frame" x="344" y="0.0" width="686" height="577"/>
-                        <animations/>
-                    </customView>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ywe-yJ-OdO">
-                        <rect key="frame" x="0.0" y="0.0" width="346" height="577"/>
+                        <rect key="frame" x="0.0" y="0.0" width="814" height="632"/>
                         <animations/>
                     </customView>
                 </subviews>
@@ -37,7 +32,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="152" y="48.5"/>
+            <point key="canvasLocation" x="156" y="28"/>
         </window>
     </objects>
 </document>
