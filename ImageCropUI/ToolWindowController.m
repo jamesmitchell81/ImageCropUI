@@ -19,14 +19,18 @@
 {
     int filterSize = [sender intValue];
     
-    NSLog(@"ave: %d", filterSize);
-
     if ( filterSize != 0 )
     {
         if ( !imageProcessing )
         {
             imageProcessing = [[ImageProcessing alloc] init];
         }
+        
+        // set other filters to 1
+        [medianFilterSlider setIntValue:1];
+        [maxFilterSlider setIntValue:1];
+        [minFilterSlider setIntValue:1];
+        
         // apply the filter to the origianal image.
         NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
         [representation.subject removeRepresentation:rep];
@@ -43,14 +47,18 @@
 {
     int filterSize = [sender intValue];
     
-    NSLog(@"med: %d", filterSize);
-    
     if ( filterSize != 1 )
     {
         if ( !imageProcessing )
         {
             imageProcessing = [[ImageProcessing alloc] init];
         }
+        
+        // set other filters to 1
+        [aveFilterSlider setIntValue:1];
+        [maxFilterSlider setIntValue:1];
+        [minFilterSlider setIntValue:1];
+        
         NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
         [representation.subject removeRepresentation:rep];
         [representation.subject addRepresentation:[imageProcessing medianFilterOfSize:filterSize onImage:representation.original]];
@@ -65,14 +73,18 @@
 {
     int filterSize = [sender intValue];
     
-    NSLog(@"max: %d", filterSize);
-    
     if ( filterSize != 1 )
     {
         if ( !imageProcessing )
         {
             imageProcessing =[[ImageProcessing alloc] init];
         }
+        
+        // set other filters to 1
+        [aveFilterSlider setIntValue:1];
+        [medianFilterSlider setIntValue:1];
+        [minFilterSlider setIntValue:1];
+        
         NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
         [representation.subject removeRepresentation:rep];
         [representation.subject addRepresentation:[imageProcessing maxFilterOfSize:filterSize onImage:representation.original]];
@@ -87,14 +99,18 @@
 {
     int filterSize = [sender intValue];
     
-    NSLog(@"min: %d", filterSize);
-    
     if ( filterSize != 1 )
     {
         if ( !imageProcessing )
         {
-            imageProcessing =[[ImageProcessing alloc] init];
+            imageProcessing = [[ImageProcessing alloc] init];
         }
+        
+        // set other filters to 1
+        [aveFilterSlider setIntValue:1];
+        [medianFilterSlider setIntValue:1];
+        [maxFilterSlider setIntValue:1];
+        
         NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
         [representation.subject removeRepresentation:rep];
         [representation.subject addRepresentation:[imageProcessing minFilterOfSize:filterSize onImage:representation.original]];
@@ -115,7 +131,6 @@
     }
     
     NSBitmapImageRep* newRep = [imageProcessing threshold:representation.original atValue:thresholdValue];
-    
     NSImageRep* oldRep = [representation.subject.representations objectAtIndex:0];
     [representation.subject removeRepresentation:oldRep];
     [representation.subject addRepresentation:newRep];
@@ -162,17 +177,17 @@
 
 - (IBAction) resetImage:(id)sender
 {
-    [aveFilterSlider setIntValue:0];
-    [medianFilterSlider setIntValue:0];
-    [maxFilterSlider setIntValue:0];
-    [minFilterSlider setIntValue:0];
+    [aveFilterSlider setIntValue:1];
+    [medianFilterSlider setIntValue:1];
+    [maxFilterSlider setIntValue:1];
+    [minFilterSlider setIntValue:1];
     
     [thresholdSlider setIntValue:128];
     
-    [erodeFilterSlider setIntValue:0];
-    [dilateFilterSlider setIntValue:0];
-    [openFilterSlider setIntValue:0];
-    [closeFilterSlider setIntValue:0];
+    [erodeFilterSlider setIntValue:1];
+    [dilateFilterSlider setIntValue:1];
+    [openFilterSlider setIntValue:1];
+    [closeFilterSlider setIntValue:1];
     
     // cropped bit.
     

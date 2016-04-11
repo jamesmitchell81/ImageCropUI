@@ -28,7 +28,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" HUD="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="116" width="365" height="601"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
             <view key="contentView" id="brm-AD-Dim">
                 <rect key="frame" x="0.0" y="0.0" width="365" height="601"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -45,7 +45,7 @@
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a2z-re-GMj">
                         <rect key="frame" x="169" y="556" width="168" height="27"/>
                         <animations/>
-                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="tfi-gI-wjR"/>
+                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="tfi-gI-wjR"/>
                         <connections>
                             <action selector="applyAveragingFilter:" target="-2" id="Vx9-VW-nPe"/>
                         </connections>
@@ -70,7 +70,7 @@
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enh-Z0-anX">
                         <rect key="frame" x="169" y="477" width="168" height="27"/>
                         <animations/>
-                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="a95-Vi-JEt"/>
+                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="a95-Vi-JEt"/>
                         <connections>
                             <action selector="applyMaxFilter:" target="-2" id="p3V-Fi-8Zn"/>
                         </connections>
@@ -87,7 +87,7 @@
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUD-yb-099">
                         <rect key="frame" x="169" y="434" width="168" height="27"/>
                         <animations/>
-                        <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="byG-lT-qmQ"/>
+                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="byG-lT-qmQ"/>
                         <connections>
                             <action selector="applyMinFilter:" target="-2" id="hPw-dv-7uN"/>
                         </connections>
