@@ -18,6 +18,8 @@
     ImageProcessing* imageProcessing;
     Morphology* morph;
     
+    NSMutableDictionary* operationOrder;
+    
     IBOutlet NSSlider *aveFilterSlider;
     IBOutlet NSSlider *medianFilterSlider;
     IBOutlet NSSlider *maxFilterSlider;
