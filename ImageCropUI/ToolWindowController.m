@@ -10,6 +10,7 @@
 #import "ImageProcessing.h"
 #import "ImageRepresentation.h"
 #import "Morphology.h"
+#import "ZhangSuenThin.h"
 
 @implementation ToolWindowController
 
@@ -162,12 +163,26 @@
 
 - (IBAction) erode:(id)sender
 {
+    morph = [[Morphology alloc] init];
     
+    NSBitmapImageRep* newRep = [morph simpleErosionOfImage:representation.subject];
+    NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
+    [representation.subject removeRepresentation:rep];
+    [representation.subject addRepresentation:newRep];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
 }
 
 - (IBAction) dilate:(id)sender
 {
+    morph = [[Morphology alloc] init];
     
+    NSBitmapImageRep* newRep = [morph simpleDilationOfImage:representation.subject];
+    NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
+    [representation.subject removeRepresentation:rep];
+    [representation.subject addRepresentation:newRep];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
 }
 
 - (IBAction) open:(id)sender
@@ -188,7 +203,16 @@
 
 - (IBAction) thin:(id)sender
 {
+    ZhangSuenThin* zst = [[ZhangSuenThin alloc] init];
     
+    NSBitmapImageRep* newRep = [zst thinImage:representation.subject];
+    NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
+    [representation.subject removeRepresentation:rep];
+    [representation.subject addRepresentation:newRep];
+    
+    [representation setCurrent:representation.subject];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
 }
 
 - (IBAction) crop:(id)sender
