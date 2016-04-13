@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		8805E5791C57D8CA00A4D60B /* DropZoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8805E5781C57D8CA00A4D60B /* DropZoneView.m */; };
 		8805E57C1C58116E00A4D60B /* ImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8805E57B1C58116E00A4D60B /* ImageCropView.m */; };
+		881E273F1CBE3B6500914359 /* SVGWebDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881E273E1CBE3B6500914359 /* SVGWebDisplayView.xib */; };
+		881E27411CBE491F00914359 /* DrawingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881E27401CBE491F00914359 /* DrawingView.xib */; };
+		881E27481CBE4CD600914359 /* h.m in Sources */ = {isa = PBXBuildFile; fileRef = 881E27471CBE4CD600914359 /* h.m */; };
+		883185191CBE587300299966 /* ViewsMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 883185181CBE587300299966 /* ViewsMenuController.m */; };
+		8831851C1CBE5F2000299966 /* PixelTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 8831851B1CBE5F2000299966 /* PixelTrace.m */; };
 		883762401CB90DFF00458768 /* ImageManipulationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8837623F1CB90DFF00458768 /* ImageManipulationView.m */; };
 		8879064A1CB7BBC800E21476 /* ImageAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906431CB7BBC800E21476 /* ImageAnalysis.m */; };
 		8879064B1CB7BBC800E21476 /* ImageRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906451CB7BBC800E21476 /* ImageRepresentation.m */; };
@@ -52,6 +57,14 @@
 		8805E5781C57D8CA00A4D60B /* DropZoneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropZoneView.m; sourceTree = "<group>"; };
 		8805E57A1C58116E00A4D60B /* ImageCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCropView.h; sourceTree = "<group>"; };
 		8805E57B1C58116E00A4D60B /* ImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCropView.m; sourceTree = "<group>"; };
+		881E273E1CBE3B6500914359 /* SVGWebDisplayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SVGWebDisplayView.xib; sourceTree = "<group>"; };
+		881E27401CBE491F00914359 /* DrawingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingView.xib; sourceTree = "<group>"; };
+		881E27461CBE4CD600914359 /* h.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = h.h; sourceTree = "<group>"; };
+		881E27471CBE4CD600914359 /* h.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = h.m; sourceTree = "<group>"; };
+		883185171CBE587300299966 /* ViewsMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewsMenuController.h; sourceTree = "<group>"; };
+		883185181CBE587300299966 /* ViewsMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewsMenuController.m; sourceTree = "<group>"; };
+		8831851A1CBE5F2000299966 /* PixelTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PixelTrace.h; sourceTree = "<group>"; };
+		8831851B1CBE5F2000299966 /* PixelTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PixelTrace.m; sourceTree = "<group>"; };
 		8837623E1CB90DFF00458768 /* ImageManipulationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManipulationView.h; sourceTree = "<group>"; };
 		8837623F1CB90DFF00458768 /* ImageManipulationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManipulationView.m; sourceTree = "<group>"; };
 		887906421CB7BBC800E21476 /* ImageAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageAnalysis.h; path = ../../ImageProcessingCLI/ImageProcessingCLI/ImageAnalysis.h; sourceTree = "<group>"; };
@@ -120,9 +133,20 @@
 			isa = PBXGroup;
 			children = (
 				88F4961A1C527EA000D35B48 /* MainWindow.xib */,
+				881E273E1CBE3B6500914359 /* SVGWebDisplayView.xib */,
 				887906601CB7F9DD00E21476 /* ToolView.xib */,
+				881E27401CBE491F00914359 /* DrawingView.xib */,
 			);
 			name = Nibs;
+			sourceTree = "<group>";
+		};
+		881E27421CBE499D00914359 /* LetterTemplates */ = {
+			isa = PBXGroup;
+			children = (
+				881E27461CBE4CD600914359 /* h.h */,
+				881E27471CBE4CD600914359 /* h.m */,
+			);
+			name = LetterTemplates;
 			sourceTree = "<group>";
 		};
 		8853BB371C5254A9003C1315 /* Views */ = {
@@ -153,6 +177,8 @@
 				887906451CB7BBC800E21476 /* ImageRepresentation.m */,
 				887906481CB7BBC800E21476 /* ImageProcessing.h */,
 				887906491CB7BBC800E21476 /* ImageProcessing.m */,
+				8831851A1CBE5F2000299966 /* PixelTrace.h */,
+				8831851B1CBE5F2000299966 /* PixelTrace.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -189,6 +215,7 @@
 		88F807F31C515F68001A7B3A /* ImageCropUI */ = {
 			isa = PBXGroup;
 			children = (
+				881E27421CBE499D00914359 /* LetterTemplates */,
 				885C96081C5A8A6B006EB10E /* Models */,
 				88F808261C5162C2001A7B3A /* Controllers */,
 				8853BB371C5254A9003C1315 /* Views */,
@@ -239,6 +266,8 @@
 				88F807FB1C515F68001A7B3A /* ViewController.m */,
 				8879065D1CB7ED6900E21476 /* ToolWindowController.h */,
 				8879065E1CB7ED6900E21476 /* ToolWindowController.m */,
+				883185171CBE587300299966 /* ViewsMenuController.h */,
+				883185181CBE587300299966 /* ViewsMenuController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -348,6 +377,8 @@
 			files = (
 				88F807FE1C515F68001A7B3A /* Assets.xcassets in Resources */,
 				88F4961C1C527EA000D35B48 /* MainWindow.xib in Resources */,
+				881E273F1CBE3B6500914359 /* SVGWebDisplayView.xib in Resources */,
+				881E27411CBE491F00914359 /* DrawingView.xib in Resources */,
 				887906611CB7F9DD00E21476 /* ToolView.xib in Resources */,
 				88F808011C515F68001A7B3A /* Main.storyboard in Resources */,
 			);
@@ -380,9 +411,12 @@
 				88F807FC1C515F68001A7B3A /* ViewController.m in Sources */,
 				887906561CB7BBDE00E21476 /* ZhangSuenThin.m in Sources */,
 				887906551CB7BBDE00E21476 /* StructuringElement.m in Sources */,
+				881E27481CBE4CD600914359 /* h.m in Sources */,
 				8879064C1CB7BBC800E21476 /* IntArrayUtil.m in Sources */,
 				887906541CB7BBDE00E21476 /* Morphology.m in Sources */,
 				88F807F91C515F68001A7B3A /* main.m in Sources */,
+				8831851C1CBE5F2000299966 /* PixelTrace.m in Sources */,
+				883185191CBE587300299966 /* ViewsMenuController.m in Sources */,
 				88F807F61C515F68001A7B3A /* AppDelegate.m in Sources */,
 				8879065F1CB7ED6900E21476 /* ToolWindowController.m in Sources */,
 				88F4961B1C527EA000D35B48 /* MainWindowController.m in Sources */,

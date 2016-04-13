@@ -11,6 +11,7 @@
 #import "ImageRepresentation.h"
 #import "Morphology.h"
 #import "ZhangSuenThin.h"
+#import "PixelTrace.h"
 
 @implementation ToolWindowController
 
@@ -300,12 +301,18 @@
     [representation setCurrent:representation.subject];
 }
 
-
-
 - (void) resetToOriginal
 {
     [representation resetSubject];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ResetOriginalImage" object:self];
 }
+
+- (IBAction) trace:(id)sender
+{
+    PixelTrace* tracer = [[PixelTrace alloc] init];
+    
+    [tracer tracePixelsOfImage:representation.subject];
+}
+
 
 @end

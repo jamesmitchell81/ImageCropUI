@@ -53,6 +53,8 @@
 - (IBAction) crop:(id)sender;
 - (IBAction) resetImage:(id)sender;
 
+- (IBAction) trace:(id)sender;
+
 - (IBAction) pinCurrent:(id)sender;
 
 
