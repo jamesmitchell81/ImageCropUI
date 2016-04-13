@@ -30,6 +30,16 @@
     self.window.titlebarAppearsTransparent = YES;
     self.window.styleMask |= NSFullSizeContentViewWindowMask;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(changeToDropZoneController)
+                                                 name:@"ViewChangeDropZoneReciever"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(changeToTemplateView)
+                                                 name:@"ViewChangeTemplateViewReciever"
+                                               object:nil];
+    
     [self changeToDropZoneController];
 //    [self addToolView];
 }
@@ -51,6 +61,11 @@
                                                  name:@"ImageUploadReciever"
                                                object:nil];
 
+}
+
+- (void) changeToTemplateView
+{
+    
 }
 
 /*
