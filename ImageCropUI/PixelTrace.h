@@ -6,13 +6,13 @@
 //  Copyright © 2016 James Mitchell. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 @interface PixelTrace : NSObject
 
 
 - (void) tracePixelsOfImage:(NSImage*)image;
 
-- (void) modifiedMooreNeighbor:(NSImage*)image;
+- (NSBitmapImageRep*) modifiedMooreNeighbor:(NSImage*)image;
 
 @end

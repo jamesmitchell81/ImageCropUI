@@ -78,7 +78,7 @@ struct PointNode {
     
 }
 
-- (void) modifiedMooreNeighbor:(NSImage*)image
+- (NSArray*) modifiedMooreNeighbor:(NSImage*)image
 {
     NSBitmapImageRep *representation = [ImageRepresentation grayScaleRepresentationOfImage:image];
     unsigned char *data = [representation bitmapData];
@@ -127,9 +127,6 @@ struct PointNode {
                          NSMakePoint(1, -1),
                          NSMakePoint(0, -1)};
     
-    // -1 -1 | -1 0 | -1 1 | 0 1 | 1 1 | 1 0 | 1 -1 | 0 -1
-    NSLog(@"Start x:%f, y:%f", start.x, start.y);
-    
     NSPoint current = start;
     NSPoint consider = last;
     NSPoint backtrackPosition = last;
@@ -150,20 +147,24 @@ struct PointNode {
     while ( run )
     {
         index = consider.x + consider.y * width;
-//        NSLog(@"d x: %f, d y:%f, c x: %f, c y:%f", consider.x, consider.y, current.x, current.y);
+//        NSLog(@"cons x: %f, y:%f, current x: %f, y:%f, bt x:%f, y:%f, next:%d", consider.x, consider.y, current.x, current.y, backtrackPosition.x, backtrackPosition.y, next);
         
         if ( data[index] == searchPixel )
         {
             // stopping critria
             if ( CGPointEqualToPoint(start, consider) )
             {
-                NSLog(@"Start Pos Match");
-                if ( CGPointEqualToPoint(last, backtrackPosition) )
-                {
-                    NSLog(@"Entered same place");
-                    run = NO;
-                    break;
-                }
+
+
+                run = NO;
+                break;
+//                if ( CGPointEqualToPoint(last, backtrackPosition) )
+//                {
+//                    NSLog(@"Entered same place");
+//                    run = NO;
+//                    break;
+//                }
+                
             }
             
             // need to prevent same pixel entering twice.
@@ -178,17 +179,15 @@ struct PointNode {
             {
                 if ( CGPointEqualToPoint(backtrackOffset, offsets[i]) )
                 {
-                    next = i + 1;
+                    next = i; //(i + 1) < 8 ? (i + 1) : 0;
                     break;
                 }
             }
             consider = NSMakePoint(current.x + offsets[next].x, current.y + offsets[next].y);
         } else {
-            
-            if ( (next + 1) == 8 ) next = 0;
-
             backtrackPosition = consider;
             next++;
+            if ( next == 8 ) next = 0;
             consider = NSMakePoint(current.x + offsets[next].x, current.y + offsets[next].y);
         }
     }
@@ -198,11 +197,12 @@ struct PointNode {
     {
         NSPoint n;
         [value getValue:&n];
-
-        NSLog(@"%f, %f", n.x, n.y);
     }
     
-    
+    NSOrderedSet* set = [NSOrderedSet orderedSetWithArray:points];
+    NSArray* distinctPoints = [set array];
+
+    return distinctPoints;
 }
 
 
