@@ -7,6 +7,7 @@
 //
 
 #import "ToolWindowController.h"
+#import "DrawingWindowController.h"
 #import "ImageProcessing.h"
 #import "ImageRepresentation.h"
 #import "Morphology.h"
@@ -310,8 +311,13 @@
 - (IBAction) trace:(id)sender
 {
     PixelTrace* tracer = [[PixelTrace alloc] init];
+    NSArray* tracedPoints = [tracer mooreNeighborContorTraceOfImage:representation.subject];
     
-    [tracer modifiedMooreNeighbor:representation.subject];
+    // line simplification
+    
+    dwc = [[DrawingWindowController alloc] initWithWindowNibName:@"DrawingWindow"];
+    [dwc setDrawingData:tracedPoints];
+    [dwc showWindow:nil];
 }
 
 

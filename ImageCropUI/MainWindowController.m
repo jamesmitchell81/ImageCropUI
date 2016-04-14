@@ -11,8 +11,8 @@
 #import "ImageCropView.h"
 #import "ImageManipulationView.h"
 #import "ToolWindowController.h"
-
 #import "ImageRepresentation.h"
+#import "PixelTrace.h"
 
 @implementation MainWindowController
 
@@ -39,7 +39,7 @@
                                              selector:@selector(changeToTemplateView)
                                                  name:@"ViewChangeTemplateViewReciever"
                                                object:nil];
-    
+
     [self changeToDropZoneController];
 //    [self addToolView];
 }
@@ -122,6 +122,7 @@
     
     [dropZoneView removeFromSuperview];
 }
+
 
 - (void) displayToolWindow
 {

@@ -11,12 +11,6 @@
 
 @implementation PixelTrace
 
-struct PointNode {
-    NSPoint point;
-    struct PointNode *left;
-    struct PointNode *right;
-};
-
 - (void) traceFromX:(int)x andY:(int)y
 {
 
@@ -78,7 +72,7 @@ struct PointNode {
     
 }
 
-- (NSArray*) modifiedMooreNeighbor:(NSImage*)image
+- (NSArray*) mooreNeighborContorTraceOfImage:(NSImage*)image
 {
     NSBitmapImageRep *representation = [ImageRepresentation grayScaleRepresentationOfImage:image];
     unsigned char *data = [representation bitmapData];

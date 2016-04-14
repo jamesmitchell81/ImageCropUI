@@ -9,5 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 @interface DrawingWindowController : NSWindowController
+{
+    NSArray* drawingData;
+    NSView* drawingView;
+}
+
+@property (nonatomic) NSArray* drawingData;
+@property (nonatomic) NSView* drawingView;
 
 @end

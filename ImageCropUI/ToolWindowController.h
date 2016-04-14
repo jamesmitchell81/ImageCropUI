@@ -11,12 +11,14 @@
 @class ImageRepresentation;
 @class ImageProcessing;
 @class Morphology;
+@class DrawingWindowController;
 
 @interface ToolWindowController : NSWindowController
 {
     ImageRepresentation* representation;
     ImageProcessing* imageProcessing;
     Morphology* morph;
+    DrawingWindowController* dwc;
     
     NSMutableDictionary* operationOrder;
     

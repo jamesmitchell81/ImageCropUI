@@ -13,6 +13,6 @@
 
 - (void) tracePixelsOfImage:(NSImage*)image;
 
-- (NSBitmapImageRep*) modifiedMooreNeighbor:(NSImage*)image;
+- (NSArray*) mooreNeighborContorTraceOfImage:(NSImage*)image;
 
 @end
