@@ -24,6 +24,7 @@
 		887906561CB7BBDE00E21476 /* ZhangSuenThin.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906531CB7BBDE00E21476 /* ZhangSuenThin.m */; };
 		8879065F1CB7ED6900E21476 /* ToolWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8879065E1CB7ED6900E21476 /* ToolWindowController.m */; };
 		887906611CB7F9DD00E21476 /* ToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887906601CB7F9DD00E21476 /* ToolView.xib */; };
+		88D1FF981CBF97B200604300 /* JMPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D1FF971CBF97B200604300 /* JMPoint.m */; };
 		88F4961B1C527EA000D35B48 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F496191C527EA000D35B48 /* MainWindowController.m */; };
 		88F4961C1C527EA000D35B48 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88F4961A1C527EA000D35B48 /* MainWindow.xib */; };
 		88F807F61C515F68001A7B3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F807F51C515F68001A7B3A /* AppDelegate.m */; };
@@ -84,6 +85,8 @@
 		8879065D1CB7ED6900E21476 /* ToolWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolWindowController.h; sourceTree = "<group>"; };
 		8879065E1CB7ED6900E21476 /* ToolWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolWindowController.m; sourceTree = "<group>"; };
 		887906601CB7F9DD00E21476 /* ToolView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolView.xib; sourceTree = "<group>"; };
+		88D1FF961CBF97B200604300 /* JMPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMPoint.h; sourceTree = "<group>"; };
+		88D1FF971CBF97B200604300 /* JMPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMPoint.m; sourceTree = "<group>"; };
 		88F496181C527EA000D35B48 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
 		88F496191C527EA000D35B48 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		88F4961A1C527EA000D35B48 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 				887906491CB7BBC800E21476 /* ImageProcessing.m */,
 				8831851A1CBE5F2000299966 /* PixelTrace.h */,
 				8831851B1CBE5F2000299966 /* PixelTrace.m */,
+				88D1FF961CBF97B200604300 /* JMPoint.h */,
+				88D1FF971CBF97B200604300 /* JMPoint.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 				8879065F1CB7ED6900E21476 /* ToolWindowController.m in Sources */,
 				88F4961B1C527EA000D35B48 /* MainWindowController.m in Sources */,
 				8805E5791C57D8CA00A4D60B /* DropZoneView.m in Sources */,
+				88D1FF981CBF97B200604300 /* JMPoint.m in Sources */,
 				8879064B1CB7BBC800E21476 /* ImageRepresentation.m in Sources */,
 				8879064A1CB7BBC800E21476 /* ImageAnalysis.m in Sources */,
 			);

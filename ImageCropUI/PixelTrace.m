@@ -17,6 +17,10 @@ struct PointNode {
     struct PointNode *right;
 };
 
+- (void) traceFromX:(int)x andY:(int)y
+{
+
+}
 
 - (void) tracePixelsOfImage:(NSImage*)image
 {
@@ -50,15 +54,16 @@ struct PointNode {
         }
 //        if ( match ) break;
     }
+     
     
 //    struct PointNode *head = nil;
     
-    [points sortUsingComparator: ^NSComparisonResult(id p1, id p2) {
+    [points sortUsingComparator: ^NSComparisonResult(id v1, id v2) {
         NSPoint point1;
-        [p1 getValue:&point1];
+        [v1 getValue:&point1];
         
         NSPoint point2;
-        [p2 getValue:&point2];
+        [v2 getValue:&point2];
         
         return point1.x > point2.x;
     }];
@@ -70,6 +75,133 @@ struct PointNode {
         
         NSLog(@"%f, %f", current.x, current.y);
     }
+    
+}
+
+- (void) modifiedMooreNeighbor:(NSImage*)image
+{
+    NSBitmapImageRep *representation = [ImageRepresentation grayScaleRepresentationOfImage:image];
+    unsigned char *data = [representation bitmapData];
+    
+    int width = image.size.width;
+    int height = image.size.height;
+    int index = 0;
+    int searchPixel = 0;
+    BOOL match = NO;
+    int x = 0, y = 0;
+
+    NSPoint start, last;
+    
+    NSMutableArray* points = [[NSMutableArray alloc] init];
+    
+    // find the first black pixel.
+    // or collect all the balck points.
+    for (y = 0; y < height; y++ )
+    {
+        for (x = 0; x < width; x++ )
+        {
+            index = x + y * width;
+            
+            if ( data[index] == searchPixel )
+            {
+                match = YES;
+                start = NSMakePoint(x, y);
+                NSValue *p = [NSValue valueWithPoint:start];
+                [points addObject:p];
+                break;
+            } else {
+                last = NSMakePoint(x, y);
+            }
+            
+        }
+        if ( match ) break;
+    }
+    
+    int next = 0;
+    NSPoint offsets[] = {NSMakePoint(-1, -1),
+                         NSMakePoint(-1, 0),
+                         NSMakePoint(-1, 1),
+                         NSMakePoint(0, 1),
+                         NSMakePoint(1, 1),
+                         NSMakePoint(1, 0),
+                         NSMakePoint(1, -1),
+                         NSMakePoint(0, -1)};
+    
+    // -1 -1 | -1 0 | -1 1 | 0 1 | 1 1 | 1 0 | 1 -1 | 0 -1
+    NSLog(@"Start x:%f, y:%f", start.x, start.y);
+    
+    NSPoint current = start;
+    NSPoint consider = last;
+    NSPoint backtrackPosition = last;
+    NSPoint backtrackOffset = NSMakePoint(last.x - start.x, last.y - start.y);
+
+    for ( int i = 0; i < 8; i++ )
+    {
+        if ( CGPointEqualToPoint(backtrackPosition, offsets[i]) )
+        {
+            next = i;
+        }
+    }
+    
+//    while ( !((start.x == current.y) && (start.y == current.y)) )
+//    while ( !CGPointEqualToPoint(start, consider) )
+    BOOL run = YES;
+    
+    while ( run )
+    {
+        index = consider.x + consider.y * width;
+//        NSLog(@"d x: %f, d y:%f, c x: %f, c y:%f", consider.x, consider.y, current.x, current.y);
+        
+        if ( data[index] == searchPixel )
+        {
+            // stopping critria
+            if ( CGPointEqualToPoint(start, consider) )
+            {
+                NSLog(@"Start Pos Match");
+                if ( CGPointEqualToPoint(last, backtrackPosition) )
+                {
+                    NSLog(@"Entered same place");
+                    run = NO;
+                    break;
+                }
+            }
+            
+            // need to prevent same pixel entering twice.
+            NSValue *val = [[NSValue alloc] init];
+            val = [NSValue valueWithPoint:consider];
+            [points addObject:val];
+           
+            current = consider;
+            backtrackOffset = NSMakePoint(backtrackPosition.x - current.x, backtrackPosition.y - current.y);
+            
+            for ( int i = 0; i < 8; i++ )
+            {
+                if ( CGPointEqualToPoint(backtrackOffset, offsets[i]) )
+                {
+                    next = i + 1;
+                    break;
+                }
+            }
+            consider = NSMakePoint(current.x + offsets[next].x, current.y + offsets[next].y);
+        } else {
+            
+            if ( (next + 1) == 8 ) next = 0;
+
+            backtrackPosition = consider;
+            next++;
+            consider = NSMakePoint(current.x + offsets[next].x, current.y + offsets[next].y);
+        }
+    }
+    
+    
+    for ( NSValue *value in points)
+    {
+        NSPoint n;
+        [value getValue:&n];
+
+        NSLog(@"%f, %f", n.x, n.y);
+    }
+    
     
 }
 

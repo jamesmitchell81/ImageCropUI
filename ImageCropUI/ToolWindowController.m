@@ -311,7 +311,7 @@
 {
     PixelTrace* tracer = [[PixelTrace alloc] init];
     
-    [tracer tracePixelsOfImage:representation.subject];
+    [tracer modifiedMooreNeighbor:representation.subject];
 }
 
 

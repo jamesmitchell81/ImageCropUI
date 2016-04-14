@@ -13,4 +13,6 @@
 
 - (void) tracePixelsOfImage:(NSImage*)image;
 
+- (void) modifiedMooreNeighbor:(NSImage*)image;
+
 @end
