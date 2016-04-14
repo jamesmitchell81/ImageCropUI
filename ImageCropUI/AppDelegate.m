@@ -22,13 +22,7 @@
     // instanciate controller with nib
     // if nil
     mainWindowController = [[MainWindowController alloc] initWithWindowNibName:@"MainWindow"];
-    //
     [mainWindowController showWindow:self];
-}
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
-    [mainWindowController.window makeFirstResponder:nil]; // why
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
