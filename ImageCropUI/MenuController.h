@@ -8,12 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewsMenuController : NSMenu
+@interface MenuController : NSMenu
 {
     
 }
 
-- (IBAction) displayDropZoneView:(id)sender;
-- (IBAction) displayTemplateView:(id)sender;
+- (IBAction) newDropZone:(id)sender;
+- (IBAction) closeApplication:(id)sender;
+
+- (IBAction) showToolWindow:(id)sender;
 
 @end

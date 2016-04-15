@@ -173,7 +173,7 @@
         
 //        representation.filtered = nil;
         
-        NSBitmapImageRep* newRep = [morph simpleErosionOfImage:representation.current ofSize:size];
+        NSBitmapImageRep* newRep = [morph simpleErosionOfImage:representation.current withNeighbourhoodSize:size];
         NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
         [representation.subject removeRepresentation:rep];
         [representation.subject addRepresentation:newRep];
@@ -195,7 +195,7 @@
             morph = [[Morphology alloc] init];
         }
         
-        NSBitmapImageRep* newRep = [morph simpleDilationOfImage:representation.current ofSize:size];
+        NSBitmapImageRep* newRep = [morph simpleDilationOfImage:representation.current withNeighbourhoodSize:size];
         NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
         [representation.subject removeRepresentation:rep];
         [representation.subject addRepresentation:newRep];
@@ -217,7 +217,7 @@
             morph = [[Morphology alloc] init];
         }
         
-        NSBitmapImageRep* newRep = [morph opening:representation.current ofSize:size];
+        NSBitmapImageRep* newRep = [morph openingOnImage:representation.current withNeighbourhoodSize:size];
         NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
         [representation.subject removeRepresentation:rep];
         [representation.subject addRepresentation:newRep];
@@ -240,7 +240,7 @@
             morph = [[Morphology alloc] init];
         }
         
-        NSBitmapImageRep* newRep = [morph closing:representation.current ofSize:size];
+        NSBitmapImageRep* newRep = [morph closingOnImage:representation.current withNeighbourhoodSize:size];
         NSImageRep* rep = [representation.subject.representations objectAtIndex:0];
         [representation.subject removeRepresentation:rep];
         [representation.subject addRepresentation:newRep];

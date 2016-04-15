@@ -10,9 +10,7 @@
 
 @interface PixelTrace : NSObject
 
-
 - (void) tracePixelsOfImage:(NSImage*)image;
-
 - (NSArray*) mooreNeighborContorTraceOfImage:(NSImage*)image;
 
 @end

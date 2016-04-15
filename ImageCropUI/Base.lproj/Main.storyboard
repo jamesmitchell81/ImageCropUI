@@ -83,25 +83,6 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Views" id="aNt-cu-cov">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Views" id="2t9-Ex-7dZ" customClass="ViewsMenuController">
-                                    <items>
-                                        <menuItem title="Drop Zone View" id="m5b-9x-vlN">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="displayDropZoneView:" target="2t9-Ex-7dZ" id="Xob-iQ-sfd"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Template View" id="MNJ-Ls-cZ6">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="displayTemplateView:" target="2t9-Ex-7dZ" id="cC1-Dx-uxW"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
-                            </menuItem>
                             <menuItem title="Advanced Tools" id="e4x-JV-kK8">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Advanced Tools" id="CIV-Bd-hsn">

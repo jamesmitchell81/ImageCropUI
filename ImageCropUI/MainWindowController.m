@@ -211,33 +211,7 @@
     [self setImageManipulationView];
 }
 
-- (void) changeViewController:(NSString*)viewControllerKey
-{
-    NSViewController* controller;
-    
-    if ([self.currentViewController view] != nil )
-    {
-        // remove the old view.
-        [[self.currentViewController view] removeFromSuperview];
-    }
-    
-    // create the new view Controller
-//    [viewControllers]
-    NSString* controllerName = [viewControllerNames objectForKey:viewControllerKey];
-    NSString* nibName        = [viewControllerNibs  objectForKey:viewControllerKey];
-    
-    id newViewControllerClass = NSClassFromString(controllerName);
-    
-    if ( [newViewControllerClass isKindOfClass:[NSViewController class]] )
-    {
-        controller = [[newViewControllerClass alloc] initWithNibName:nibName bundle:nil];
-    }
 
-    // update the containerView sub
-    currentViewController = controller;
-    [containerView addSubview:[currentViewController view]];
-
-}
 
 
 @end

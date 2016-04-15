@@ -11,11 +11,6 @@
 
 @implementation PixelTrace
 
-- (void) traceFromX:(int)x andY:(int)y
-{
-
-}
-
 - (void) tracePixelsOfImage:(NSImage*)image
 {
     NSBitmapImageRep *representation = [ImageRepresentation grayScaleRepresentationOfImage:image];
