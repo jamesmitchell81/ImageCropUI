@@ -15,7 +15,6 @@
 
 - (IBAction) newDropZone:(id)sender;
 - (IBAction) closeApplication:(id)sender;
-
 - (IBAction) showToolWindow:(id)sender;
 
 @end

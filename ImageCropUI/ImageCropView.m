@@ -47,14 +47,8 @@
     NSPoint windowLocation = [theEvent locationInWindow];
     NSPoint viewLocation = [self convertPoint:windowLocation fromView:nil];
     start = viewLocation;
-    
-    // prevent if outside image.
-//    NSSize s = self.image.size;
-//    NSRect viewBounds = self.bounds;
-    
+
     [self setNeedsDisplay:YES];
-    
-    
 }
 
 - (void) mouseDragged:(NSEvent *)theEvent
@@ -92,8 +86,6 @@
         start.y = current.y;
         current.y = temp;
     }
-    
-    
 
     _croppedImage = [[NSImage alloc] initWithSize:cropSize];
     [_croppedImage addRepresentation:[self croppedRepresentationOfImage:[self image]
@@ -117,10 +109,6 @@
     int height = (int)(from.y - to.y);
     
     NSRect newRect = NSMakeRect(from.x , to.y, width, height);
-    
-    NSLog(@"width:%d, height:%d", width, height);
-    NSLog(@"x: %f, y:%f", from.x, from.y);
-    NSLog(@"x: %f, y:%f", to.x, to.y);
     
     NSBitmapImageRep *representation = [[NSBitmapImageRep alloc]
                                         initWithBitmapDataPlanes: NULL
@@ -150,34 +138,5 @@
 
     return representation;
 }
-
-- (NSBitmapImageRep *) grayScaleRepresentationOfImage:(NSImage *)image
-{
-    NSSize size = [image size];
-    
-    NSBitmapImageRep *representation = [[NSBitmapImageRep alloc]
-                                        initWithBitmapDataPlanes: NULL
-                                        pixelsWide: size.width
-                                        pixelsHigh: size.height
-                                        bitsPerSample: 8
-                                        samplesPerPixel: 1
-                                        hasAlpha: NO
-                                        isPlanar: NO
-                                        colorSpaceName: NSCalibratedWhiteColorSpace
-                                        bytesPerRow: size.width //* 4
-                                        bitsPerPixel: 8];
-    
-    NSGraphicsContext *context = [NSGraphicsContext graphicsContextWithBitmapImageRep:representation];
-    [NSGraphicsContext saveGraphicsState];
-    [NSGraphicsContext setCurrentContext:context];
-        [image drawAtPoint:NSZeroPoint fromRect:NSZeroRect operation:NSCompositeCopy fraction:1.0];
-    [context flushGraphics];
-    [NSGraphicsContext restoreGraphicsState];
-    return representation;
-}
-
-
-
-
 
 @end

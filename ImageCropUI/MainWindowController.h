@@ -16,30 +16,17 @@
 
 @interface MainWindowController : NSWindowController
 {
-    NSImage* image;
     ImageRepresentation* representation;
-    
     IBOutlet NSView* containerView;
-    IBOutlet NSView* toolView;
-    ToolWindowController* toolViewController;
-    
-    // collection of the view controllers.
-    NSMutableDictionary* viewControllerNames;
-    NSMutableDictionary* viewControllerNibs;
+    ToolWindowController* toolWindowController;
 }
 
 @property (nonatomic) ImageRepresentation* representation;
-
-// CurrentViewController
-@property (nonatomic) NSViewController* currentViewController;
-
-// Views/ViewControllers.
 @property (nonatomic) DropZoneView* dropZoneView;
 @property (nonatomic) ImageManipulationView* imgManipView;
 @property (nonatomic) ImageCropView* imageCropView;
 @property (nonatomic) NSScrollView* scrollView;
 
-- (void) changeViewController:(NSString*)viewControllerName;
 - (NSRect) determineViewBounds;
 - (void) handleDroppedImage;
 - (void) imageFromDropZone;

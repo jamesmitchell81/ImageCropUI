@@ -13,9 +13,7 @@
 
 @implementation DropZoneView
 
-@synthesize image = _image;
-@synthesize name = _name;
-
+@synthesize image;
 
 - (id)initWithFrame:(NSRect)frameRect
 {
@@ -36,8 +34,6 @@
     NSPasteboard* pasteboard;
     NSDragOperation sourceDragInformation;
     
-    NSLog(@"draggingEntered");
-    
     // get the drag information from the sender.
     sourceDragInformation = [sender draggingSourceOperationMask];
     // get the pastebaord information from the sender.
@@ -50,8 +46,6 @@
             
             self.successDisplay = YES;
             [self setNeedsDisplay:YES];
-            
-            _name = @"James";
             
             return NSDragOperationCopy;
         }
@@ -82,7 +76,7 @@
 {
     
     NSImage* droppedImage = [[NSImage alloc] initWithPasteboard:[sender draggingPasteboard]];
-    _image = droppedImage;
+    image = droppedImage;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUploadReciever" object:self];
     
     return YES;

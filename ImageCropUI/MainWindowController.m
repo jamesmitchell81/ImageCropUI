@@ -17,7 +17,6 @@
 @implementation MainWindowController
 
 @synthesize representation;
-@synthesize currentViewController;
 @synthesize dropZoneView;
 @synthesize imgManipView;
 @synthesize imageCropView;
@@ -34,11 +33,6 @@
                                              selector:@selector(changeToDropZoneController)
                                                  name:@"ViewChangeDropZoneReciever"
                                                object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(changeToTemplateView)
-                                                 name:@"ViewChangeTemplateViewReciever"
-                                               object:nil];
 
     [self changeToDropZoneController];
 //    [self addToolView];
@@ -46,23 +40,20 @@
 
 - (void) changeToDropZoneController
 {
-    if ([self.currentViewController view] != nil )
-    {
-        // remove the old view.
-        [[self.currentViewController view] removeFromSuperview];
-    }
-    
-    NSLog(@"ChangeToDropZoneController");
-    
+    NSArray* subviews = [containerView subviews];
     dropZoneView = [[DropZoneView alloc] initWithFrame:[containerView bounds]];
-
-    [containerView addSubview:dropZoneView];
     
+    if ( [subviews count] != 0 )
+    {
+        [containerView replaceSubview:[subviews objectAtIndex:0] with:dropZoneView];
+    } else {
+        [containerView addSubview:dropZoneView];
+    }
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(handleDroppedImage)
                                                  name:@"ImageUploadReciever"
                                                object:nil];
-
 }
 
 - (void) handleDroppedImage
@@ -91,13 +82,13 @@
 
 - (void) displayToolWindow
 {
-    if ( !toolViewController )
+    if ( !toolWindowController )
     {
-        toolViewController = [[ToolWindowController alloc] initWithWindowNibName:@"ToolView"];
-        [toolViewController showWindow:nil];
+        toolWindowController = [[ToolWindowController alloc] initWithWindowNibName:@"ToolView"];
+        [toolWindowController showWindow:nil];
     }
     
-    [toolViewController setRepresentation:representation];
+    [toolWindowController setRepresentation:representation];
 }
 
 - (void) setImageManipulationView

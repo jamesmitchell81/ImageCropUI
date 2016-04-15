@@ -9,15 +9,12 @@
             <connections>
                 <outlet property="aveFilterSlider" destination="a2z-re-GMj" id="6oo-lJ-7y6"/>
                 <outlet property="closeFilterSlider" destination="aCi-8K-ocy" id="HbJ-sf-TDm"/>
-                <outlet property="crop" destination="Dhj-6t-EnX" id="t6F-BA-4GK"/>
                 <outlet property="dilateFilterSlider" destination="tEf-hn-BIL" id="TgM-eR-XNQ"/>
                 <outlet property="erodeFilterSlider" destination="qGM-iM-4Aa" id="9T5-1i-TbE"/>
                 <outlet property="maxFilterSlider" destination="enh-Z0-anX" id="1dg-vo-ATa"/>
                 <outlet property="medianFilterSlider" destination="FOQ-Ty-k6v" id="XWw-EQ-B4J"/>
                 <outlet property="minFilterSlider" destination="HUD-yb-099" id="W3D-Vz-7Vk"/>
                 <outlet property="openFilterSlider" destination="SLl-XR-7T1" id="F28-qa-j6Z"/>
-                <outlet property="polaritySwitch" destination="QlH-Qu-urB" id="o2K-Sg-7Qz"/>
-                <outlet property="thin" destination="LXA-jc-MGC" id="zER-S9-kRV"/>
                 <outlet property="thresholdSlider" destination="SgR-ap-svj" id="9nU-5B-7Ca"/>
                 <outlet property="window" destination="8SU-WB-JiF" id="6Cc-62-BJC"/>
             </connections>
@@ -93,7 +90,7 @@
                         </textFieldCell>
                     </textField>
                     <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Zoe-2t-oxg">
-                        <rect key="frame" x="20" y="456" width="325" height="4"/>
+                        <rect key="frame" x="20" y="456" width="325" height="5"/>
                         <animations/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

@@ -20,23 +20,15 @@
     Morphology* morph;
     DrawingWindowController* dwc;
     
-    NSMutableDictionary* operationOrder;
-    
     IBOutlet NSSlider *aveFilterSlider;
     IBOutlet NSSlider *medianFilterSlider;
     IBOutlet NSSlider *maxFilterSlider;
     IBOutlet NSSlider *minFilterSlider;
-    
     IBOutlet NSSlider *thresholdSlider;
-
     IBOutlet NSSlider *erodeFilterSlider;
     IBOutlet NSSlider *dilateFilterSlider;
     IBOutlet NSSlider *openFilterSlider;
     IBOutlet NSSlider *closeFilterSlider;
-    
-    IBOutlet NSButton *polaritySwitch;
-    IBOutlet NSButton *thin;
-    IBOutlet NSButton *crop;
 }
 
 @property (nonatomic) ImageRepresentation* representation;
@@ -54,12 +46,8 @@
 - (IBAction) thin:(id)sender;
 - (IBAction) crop:(id)sender;
 - (IBAction) resetImage:(id)sender;
-
 - (IBAction) trace:(id)sender;
-
 - (IBAction) pinCurrent:(id)sender;
-
-
 - (void) resetToOriginal;
 
 @end

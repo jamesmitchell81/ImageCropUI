@@ -9,20 +9,12 @@
 #import <Cocoa/Cocoa.h>
 #import "MainWindowController.h"
 
-//@protocol JMImageReceiverDelegate <NSObject>
-//- (NSImage*) provideImage;
-//@end
-
-
 @interface DropZoneView : NSView <NSDraggingDestination>
 {
-    NSString* _name;
-    NSImage* _image;
+    NSImage* image;
 }
 
 @property (nonatomic, strong) NSImage* image;
-@property (nonatomic, strong) NSString* name;
-//@property (nonatomic, strong) IBOutlet id delegate;
 
 @property (assign) BOOL successDisplay;
 @property (assign) BOOL defaultDisplay;

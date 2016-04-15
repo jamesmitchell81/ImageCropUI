@@ -15,12 +15,8 @@
 
 @implementation AppDelegate
 
-//@synthesize mainWindowController;  = _mainWindowController;
-
 - (void) applicationWillFinishLaunching:(NSNotification *)notification
 {
-    // instanciate controller with nib
-    // if nil
     mainWindowController = [[MainWindowController alloc] initWithWindowNibName:@"MainWindow"];
     [mainWindowController showWindow:self];
 }
