@@ -65,38 +65,6 @@
 
 }
 
-/*
- * Where the image is larger then the container window
- * set the destination view to be the size of the image.
- */
-- (NSRect) determineViewBounds
-{
-    NSRect viewBounds;
-    int viewWidth;
-    int viewHeight;
-    
-    int maxWidth = 1000;
-    int maxHeight = 1000;
-    
-    if ( maxHeight < representation.subject.size.height )
-    {
-        viewHeight = maxHeight;
-    } else {
-        viewHeight = representation.subject.size.height;
-    }
-    
-    if ( maxWidth < representation.subject.size.width )
-    {
-        viewWidth = maxWidth;
-    } else {
-        viewWidth = representation.subject.size.width;
-    }
-    
-    viewBounds = NSMakeRect(0, 0, viewWidth, viewHeight);
-
-    return viewBounds;
-}
-
 - (void) handleDroppedImage
 {
     [self imageFromDropZone];
@@ -204,6 +172,38 @@
     [imageCropView removeFromSuperview];
     
     [self setImageManipulationView];
+}
+
+/*
+ * Where the image is larger then the container window
+ * set the destination view to be the size of the image.
+ */
+- (NSRect) determineViewBounds
+{
+    NSRect viewBounds;
+    int viewWidth;
+    int viewHeight;
+    
+    int maxWidth = 1000;
+    int maxHeight = 1000;
+    
+    if ( maxHeight < representation.subject.size.height )
+    {
+        viewHeight = maxHeight;
+    } else {
+        viewHeight = representation.subject.size.height;
+    }
+    
+    if ( maxWidth < representation.subject.size.width )
+    {
+        viewWidth = maxWidth;
+    } else {
+        viewWidth = representation.subject.size.width;
+    }
+    
+    viewBounds = NSMakeRect(0, 0, viewWidth, viewHeight);
+    
+    return viewBounds;
 }
 
 @end
