@@ -65,11 +65,6 @@
 
 }
 
-- (void) changeToTemplateView
-{
-    
-}
-
 /*
  * Where the image is larger then the container window
  * set the destination view to be the size of the image.
@@ -210,8 +205,5 @@
     
     [self setImageManipulationView];
 }
-
-
-
 
 @end
