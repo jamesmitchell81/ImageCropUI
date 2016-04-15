@@ -16,16 +16,15 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-
-    NSLog(@"windowDidload");
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     
-    // add the drawing view.
-    NSLog(@"%f, %f", self.window.frame.size.width, self.window.frame.size.height);
+//    drawingView = [[DrawingView alloc] initWithFrame:[self.window frame]];
+//    [[self.window contentView] addSubview:drawingView];
+//    [drawingView setNeedsDisplay:YES];
     
-    drawingView = [[DrawingView alloc] initWithFrame:[self.window frame]];
-    [[self.window contentView] addSubview:drawingView];
-    [drawingView setNeedsDisplay:YES];
+    if ( drawingData )
+    {
+        [drawingView setDrawingData:drawingData];
+    }
 }
 
 - (void)awakeFromNib
@@ -34,8 +33,6 @@
     self.window.titleVisibility = NSWindowTitleHidden;
     self.window.titlebarAppearsTransparent = YES;
     self.window.styleMask |= NSFullSizeContentViewWindowMask;
-
-    
 }
 
 @end

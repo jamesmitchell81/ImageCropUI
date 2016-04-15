@@ -12,7 +12,7 @@
 
 @interface DrawingWindowController : NSWindowController
 {
-    DrawingView* drawingView;
+    IBOutlet DrawingView* drawingView;
     NSArray* drawingData;
 }
 

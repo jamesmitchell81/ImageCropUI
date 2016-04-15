@@ -10,6 +10,8 @@
 
 @implementation DrawingView
 
+@synthesize drawingData;
+
 - (id) initWithFrame:(NSRect)frameRect
 {
     self = [super initWithFrame:frameRect];
@@ -22,30 +24,53 @@
     return self;
 }
 
+- (void) setDrawingData:(NSArray *)data
+{
+    drawingData = data;
+}
+
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
+    NSRect viewSize = self.bounds;
+    
+    [[NSColor whiteColor] setFill];
+    NSRectFill(dirtyRect);
+    
+    if ( !drawingData ) return;
+    
+    // REFERENCE: //developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CocoaDrawingGuide/Transforms/Transforms.html#//apple_ref/doc/uid/TP40003290-CH204-BCIHDAIJ
+    NSRect frameRect = [self bounds];
+    NSAffineTransform* flip = [NSAffineTransform transform];
+    [flip translateXBy:0.0 yBy:frameRect.size.height];
+    [flip scaleXBy:3.0 yBy:-3.0];
+    [flip concat];
+    
     NSColor* fillColor = [NSColor colorWithCalibratedRed: 0 green: 0 blue: 0 alpha: 1];
-    NSBezierPath* hPath = [NSBezierPath bezierPath];
-    [hPath moveToPoint: NSMakePoint(0.06, 0)];
-    [hPath lineToPoint: NSMakePoint(1.59, 0)];
-    [hPath lineToPoint: NSMakePoint(1.59, 20.16)];
-    [hPath curveToPoint: NSMakePoint(13.41, 32.69) controlPoint1: NSMakePoint(1.59, 27.53) controlPoint2: NSMakePoint(6.5, 32.69)];
-    [hPath curveToPoint: NSMakePoint(24.47, 21.66) controlPoint1: NSMakePoint(19.97, 32.69) controlPoint2: NSMakePoint(24.47, 28.5)];
-    [hPath lineToPoint: NSMakePoint(24.47, 0)];
-    [hPath lineToPoint: NSMakePoint(26, 0)];
-    [hPath lineToPoint: NSMakePoint(26, 21.72)];
-    [hPath curveToPoint: NSMakePoint(13.59, 34.12) controlPoint1: NSMakePoint(26, 29.25) controlPoint2: NSMakePoint(20.97, 34.12)];
-    [hPath curveToPoint: NSMakePoint(1.66, 25.69) controlPoint1: NSMakePoint(7.75, 34.12) controlPoint2: NSMakePoint(3.09, 30.66)];
-    [hPath lineToPoint: NSMakePoint(1.59, 25.69)];
-    [hPath lineToPoint: NSMakePoint(1.59, 47.06)];
-    [hPath lineToPoint: NSMakePoint(0.06, 47.06)];
-    [hPath lineToPoint: NSMakePoint(0.06, 0)];
-    [hPath closePath];
-    [hPath setMiterLimit: 4];
-    [hPath setWindingRule: NSEvenOddWindingRule];
-    [fillColor setFill];
-    [hPath fill];
+    NSBezierPath* path = [NSBezierPath bezierPath];
+    
+    NSPoint n;
+    NSValue *value;
+    
+    value = [drawingData objectAtIndex:0];
+    [value getValue:&n];
+    [path moveToPoint:n];
+    
+    for ( int i = 0; i < [drawingData count]; i++ )
+    {
+        value = [drawingData objectAtIndex:i];
+        [value getValue:&n];
+        [path lineToPoint:n];
+    }
+    
+//    [hPath curveToPoint: NSMakePoint(13.41, 32.69) controlPoint1: NSMakePoint(1.59, 27.53) controlPoint2: NSMakePoint(6.5, 32.69)];
+//    [hPath curveToPoint: NSMakePoint(24.47, 21.66) controlPoint1: NSMakePoint(19.97, 32.69) controlPoint2: NSMakePoint(24.47, 28.5)];
+
+    [path closePath];
+    [path setWindingRule: NSEvenOddWindingRule];
+    [path setLineWidth:0.5];
+    [fillColor setStroke];
+    [path stroke];
 }
 
 @end

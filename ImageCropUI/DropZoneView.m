@@ -91,7 +91,6 @@
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
-    // this is temporay and will need to change to CoreAnimation.
         [[NSColor greenColor] setFill];
         NSRectFill(dirtyRect);
         [super drawRect:dirtyRect];

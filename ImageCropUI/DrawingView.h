@@ -9,5 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 @interface DrawingView : NSView
+{
+    NSArray* drawingData;
+}
+
+@property (nonatomic) NSArray* drawingData;
+
+- (void) setDrawingData:(NSArray*)data;
 
 @end

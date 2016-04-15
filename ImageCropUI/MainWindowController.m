@@ -52,6 +52,8 @@
         [[self.currentViewController view] removeFromSuperview];
     }
     
+    NSLog(@"ChangeToDropZoneController");
+    
     dropZoneView = [[DropZoneView alloc] initWithFrame:[containerView bounds]];
 
     [containerView addSubview:dropZoneView];

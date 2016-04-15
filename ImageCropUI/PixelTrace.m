@@ -186,18 +186,12 @@
         }
     }
     
-    
-    for ( NSValue *value in points)
-    {
-        NSPoint n;
-        [value getValue:&n];
-    }
-    
     NSOrderedSet* set = [NSOrderedSet orderedSetWithArray:points];
     NSArray* distinctPoints = [set array];
 
     return distinctPoints;
 }
+
 
 
 @end
