@@ -14,7 +14,6 @@
 		8809D7991CC01FC9005CB6DA /* DrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8809D7981CC01FC9005CB6DA /* DrawingView.m */; };
 		881E273F1CBE3B6500914359 /* SVGWebDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881E273E1CBE3B6500914359 /* SVGWebDisplayView.xib */; };
 		881E27481CBE4CD600914359 /* h.m in Sources */ = {isa = PBXBuildFile; fileRef = 881E27471CBE4CD600914359 /* h.m */; };
-		883185191CBE587300299966 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 883185181CBE587300299966 /* MenuController.m */; };
 		8831851C1CBE5F2000299966 /* PixelTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 8831851B1CBE5F2000299966 /* PixelTrace.m */; };
 		883762401CB90DFF00458768 /* ImageManipulationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8837623F1CB90DFF00458768 /* ImageManipulationView.m */; };
 		8879064A1CB7BBC800E21476 /* ImageAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 887906431CB7BBC800E21476 /* ImageAnalysis.m */; };
@@ -65,8 +64,6 @@
 		881E273E1CBE3B6500914359 /* SVGWebDisplayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SVGWebDisplayView.xib; sourceTree = "<group>"; };
 		881E27461CBE4CD600914359 /* h.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = h.h; sourceTree = "<group>"; };
 		881E27471CBE4CD600914359 /* h.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = h.m; sourceTree = "<group>"; };
-		883185171CBE587300299966 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuController.h; sourceTree = "<group>"; };
-		883185181CBE587300299966 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuController.m; sourceTree = "<group>"; };
 		8831851A1CBE5F2000299966 /* PixelTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PixelTrace.h; sourceTree = "<group>"; };
 		8831851B1CBE5F2000299966 /* PixelTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PixelTrace.m; sourceTree = "<group>"; };
 		8837623E1CB90DFF00458768 /* ImageManipulationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManipulationView.h; sourceTree = "<group>"; };
@@ -264,8 +261,6 @@
 				88F496191C527EA000D35B48 /* MainWindowController.m */,
 				8879065D1CB7ED6900E21476 /* ToolWindowController.h */,
 				8879065E1CB7ED6900E21476 /* ToolWindowController.m */,
-				883185171CBE587300299966 /* MenuController.h */,
-				883185181CBE587300299966 /* MenuController.m */,
 				8809D7941CBFFCD5005CB6DA /* DrawingWindowController.h */,
 				8809D7951CBFFCD5005CB6DA /* DrawingWindowController.m */,
 			);
@@ -416,7 +411,6 @@
 				88F807F91C515F68001A7B3A /* main.m in Sources */,
 				8809D7961CBFFCD5005CB6DA /* DrawingWindowController.m in Sources */,
 				8831851C1CBE5F2000299966 /* PixelTrace.m in Sources */,
-				883185191CBE587300299966 /* MenuController.m in Sources */,
 				88F807F61C515F68001A7B3A /* AppDelegate.m in Sources */,
 				8879065F1CB7ED6900E21476 /* ToolWindowController.m in Sources */,
 				88F4961B1C527EA000D35B48 /* MainWindowController.m in Sources */,

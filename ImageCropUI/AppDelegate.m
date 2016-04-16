@@ -26,4 +26,14 @@
     return YES;
 }
 
+- (IBAction) newDropZone:(id)sender
+{
+    [mainWindowController changeToDropZoneController];
+}
+
+- (IBAction) showToolWindow:(id)sender
+{
+    [mainWindowController displayToolWindow];
+}
+
 @end

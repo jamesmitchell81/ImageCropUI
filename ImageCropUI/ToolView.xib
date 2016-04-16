@@ -10,7 +10,7 @@
                 <outlet property="aveFilterSlider" destination="a2z-re-GMj" id="6oo-lJ-7y6"/>
                 <outlet property="closeFilterSlider" destination="aCi-8K-ocy" id="HbJ-sf-TDm"/>
                 <outlet property="dilateFilterSlider" destination="tEf-hn-BIL" id="TgM-eR-XNQ"/>
-                <outlet property="erodeFilterSlider" destination="qGM-iM-4Aa" id="9T5-1i-TbE"/>
+                <outlet property="erodeFilterSlider" destination="Hp2-gZ-9Wc" id="RWz-B0-GN2"/>
                 <outlet property="maxFilterSlider" destination="enh-Z0-anX" id="1dg-vo-ATa"/>
                 <outlet property="medianFilterSlider" destination="FOQ-Ty-k6v" id="XWw-EQ-B4J"/>
                 <outlet property="minFilterSlider" destination="HUD-yb-099" id="W3D-Vz-7Vk"/>
@@ -25,7 +25,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" HUD="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="116" width="365" height="649"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="768"/>
             <view key="contentView" id="brm-AD-Dim">
                 <rect key="frame" x="0.0" y="0.0" width="365" height="649"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -112,14 +112,6 @@
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
-                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qGM-iM-4Aa">
-                        <rect key="frame" x="169" y="360" width="168" height="27"/>
-                        <animations/>
-                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="10" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="W48-d7-zkT"/>
-                        <connections>
-                            <action selector="erode:" target="-2" id="GkV-F5-Zhq"/>
-                        </connections>
-                    </slider>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MtG-4l-2oc">
                         <rect key="frame" x="30" y="368" width="40" height="17"/>
                         <animations/>
@@ -270,10 +262,18 @@
                             <action selector="crop:" target="-2" id="njT-5y-H2e"/>
                         </connections>
                     </button>
+                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hp2-gZ-9Wc">
+                        <rect key="frame" x="169" y="362" width="173" height="27"/>
+                        <animations/>
+                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="10" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="s9X-AP-VcJ"/>
+                        <connections>
+                            <action selector="erode:" target="-2" id="eOf-3i-Q1d"/>
+                        </connections>
+                    </slider>
                 </subviews>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="-235.5" y="-5.5"/>
+            <point key="canvasLocation" x="-92.5" y="2.5"/>
         </window>
     </objects>
 </document>

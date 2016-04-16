@@ -12,11 +12,13 @@
 
 @interface DrawingWindowController : NSWindowController
 {
-    IBOutlet DrawingView* drawingView;
+    DrawingView* drawingView;
+    IBOutlet NSView* containerView;
     NSArray* drawingData;
 }
 
 @property (nonatomic) NSArray* drawingData;
 @property (nonatomic) NSView* drawingView;
+@property (nonatomic) NSScrollView* scrollView;
 
 @end

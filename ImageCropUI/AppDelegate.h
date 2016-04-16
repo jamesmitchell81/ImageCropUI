@@ -15,5 +15,8 @@
     MainWindowController* mainWindowController;
 }
 
+- (IBAction) newDropZone:(id)sender;
+- (IBAction) showToolWindow:(id)sender;
+
 @end
 

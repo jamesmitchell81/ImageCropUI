@@ -28,6 +28,7 @@
 @property (nonatomic) NSScrollView* scrollView;
 
 - (NSRect) determineViewBounds;
+- (void) changeToDropZoneController;
 - (void) handleDroppedImage;
 - (void) imageFromDropZone;
 - (void) displayToolWindow;

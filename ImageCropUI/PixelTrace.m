@@ -181,9 +181,13 @@
         }
     }
     
+    NSLog(@"%lu", (unsigned long)[points count]);
+    
     NSOrderedSet* set = [NSOrderedSet orderedSetWithArray:points];
     NSArray* distinctPoints = [set array];
 
+    NSLog(@"%lu", (unsigned long)[distinctPoints count]);
+    
     return distinctPoints;
 }
 

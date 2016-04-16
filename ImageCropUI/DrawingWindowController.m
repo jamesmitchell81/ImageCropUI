@@ -13,6 +13,7 @@
 
 @synthesize drawingData;
 @synthesize drawingView;
+@synthesize scrollView;
 
 - (void)windowDidLoad {
     [super windowDidLoad];
@@ -33,6 +34,21 @@
     self.window.titleVisibility = NSWindowTitleHidden;
     self.window.titlebarAppearsTransparent = YES;
     self.window.styleMask |= NSFullSizeContentViewWindowMask;
+    
+    NSRect viewBounds = self.window.frame;
+    
+    drawingView = [[DrawingView alloc] initWithFrame:viewBounds];
+    [drawingView setNeedsDisplay:YES];
+    
+    // add the new view.
+    scrollView = [[NSScrollView alloc] initWithFrame:viewBounds];
+    [scrollView setHasVerticalScroller:YES];
+    [scrollView setHasHorizontalScroller:YES];
+    [scrollView setDocumentView:drawingView];
+    
+    [containerView setBounds:viewBounds];
+    [containerView addSubview:scrollView];
+    [self.window setContentView:scrollView];
 }
 
 @end

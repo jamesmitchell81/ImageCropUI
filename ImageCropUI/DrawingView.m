@@ -32,7 +32,7 @@
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
-    NSRect viewSize = self.bounds;
+//    NSRect viewSize = self.bounds;
     
     [[NSColor whiteColor] setFill];
     NSRectFill(dirtyRect);

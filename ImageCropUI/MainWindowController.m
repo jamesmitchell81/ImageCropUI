@@ -33,9 +33,12 @@
                                              selector:@selector(changeToDropZoneController)
                                                  name:@"ViewChangeDropZoneReciever"
                                                object:nil];
+}
 
+- (void) windowDidLoad
+{
+    [super windowDidLoad];
     [self changeToDropZoneController];
-//    [self addToolView];
 }
 
 - (void) changeToDropZoneController
@@ -54,11 +57,15 @@
                                              selector:@selector(handleDroppedImage)
                                                  name:@"ImageUploadReciever"
                                                object:nil];
+    
+    [self.window setContentView:dropZoneView];
+    [dropZoneView setNeedsDisplay:YES];
 }
 
 - (void) handleDroppedImage
 {
     [self imageFromDropZone];
+    [dropZoneView removeFromSuperview];
     [self setImageManipulationView];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ImageUploadReciever" object:nil];
 }
@@ -75,8 +82,6 @@
     [representation setSubject:[dropZoneView image]];
     [representation setOriginal:[dropZoneView image]];
     [representation setCurrent:[dropZoneView image]];
-    
-    [dropZoneView removeFromSuperview];
 }
 
 
@@ -87,7 +92,7 @@
         toolWindowController = [[ToolWindowController alloc] initWithWindowNibName:@"ToolView"];
         [toolWindowController showWindow:nil];
     }
-    
+
     [toolWindowController setRepresentation:representation];
 }
 
