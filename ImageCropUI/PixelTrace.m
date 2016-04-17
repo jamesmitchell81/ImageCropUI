@@ -84,7 +84,6 @@
     NSMutableArray* points = [[NSMutableArray alloc] init];
     
     // find the first black pixel.
-    // or collect all the balck points.
     for (y = 0; y < height; y++ )
     {
         for (x = 0; x < width; x++ )
@@ -123,40 +122,26 @@
 
     for ( int i = 0; i < 8; i++ )
     {
-        if ( CGPointEqualToPoint(backtrackPosition, offsets[i]) )
+        if ( CGPointEqualToPoint(backtrackOffset, offsets[i]) )
         {
             next = i;
         }
     }
-    
-//    while ( !((start.x == current.y) && (start.y == current.y)) )
-//    while ( !CGPointEqualToPoint(start, consider) )
+
     BOOL run = YES;
-    
     while ( run )
     {
         index = consider.x + consider.y * width;
-//        NSLog(@"cons x: %f, y:%f, current x: %f, y:%f, bt x:%f, y:%f, next:%d", consider.x, consider.y, current.x, current.y, backtrackPosition.x, backtrackPosition.y, next);
         
         if ( data[index] == searchPixel )
         {
             // stopping critria
             if ( CGPointEqualToPoint(start, consider) )
             {
-
-
                 run = NO;
                 break;
-//                if ( CGPointEqualToPoint(last, backtrackPosition) )
-//                {
-//                    NSLog(@"Entered same place");
-//                    run = NO;
-//                    break;
-//                }
-                
             }
             
-            // need to prevent same pixel entering twice.
             NSValue *val = [[NSValue alloc] init];
             val = [NSValue valueWithPoint:consider];
             [points addObject:val];
@@ -181,12 +166,8 @@
         }
     }
     
-    NSLog(@"%lu", (unsigned long)[points count]);
-    
     NSOrderedSet* set = [NSOrderedSet orderedSetWithArray:points];
     NSArray* distinctPoints = [set array];
-
-    NSLog(@"%lu", (unsigned long)[distinctPoints count]);
     
     return distinctPoints;
 }
