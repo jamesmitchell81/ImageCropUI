@@ -10,6 +10,7 @@
 
 @class ImageRepresentation;
 @class ImageProcessing;
+@class ImageAnalysis;
 @class Morphology;
 @class DrawingWindowController;
 
@@ -17,6 +18,7 @@
 {
     ImageRepresentation* representation;
     ImageProcessing* imageProcessing;
+    ImageAnalysis* imageAnalysis;
     Morphology* morph;
     DrawingWindowController* dwc;
     
@@ -47,6 +49,10 @@
 - (IBAction) crop:(id)sender;
 - (IBAction) resetImage:(id)sender;
 - (IBAction) trace:(id)sender;
+
+- (IBAction) lineDensityHistorgram:(id)sender;
+- (IBAction) greylevelHistogram:(id)sender;
+
 - (IBAction) pinCurrent:(id)sender;
 - (void) resetToOriginal;
 

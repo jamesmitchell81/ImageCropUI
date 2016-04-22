@@ -9,10 +9,12 @@
 #import "ToolWindowController.h"
 #import "DrawingWindowController.h"
 #import "ImageProcessing.h"
+#import "ImageAnalysis.h"
 #import "ImageRepresentation.h"
 #import "Morphology.h"
 #import "ZhangSuenThin.h"
 #import "PixelTrace.h"
+#import "IntArrayUtil.h"
 
 @implementation ToolWindowController
 
@@ -154,9 +156,12 @@
     NSImageRep* oldRep = [representation.subject.representations objectAtIndex:0];
     [representation.subject removeRepresentation:oldRep];
     [representation.subject addRepresentation:newRep];
-    
     [representation setCurrent:representation.subject];
     
+    oldRep = [representation.thresholded.representations objectAtIndex:0];
+    [representation.thresholded removeRepresentation:oldRep];
+    [representation.thresholded addRepresentation:newRep];
+
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
 }
 
@@ -313,11 +318,58 @@
     PixelTrace* tracer = [[PixelTrace alloc] init];
     NSArray* tracedPoints = [tracer mooreNeighborContorTraceOfImage:representation.subject];
     
-    // line simplification
+    // line simplification here
     
     dwc = [[DrawingWindowController alloc] initWithWindowNibName:@"DrawingWindow"];
     [dwc setDrawingData:tracedPoints];
     [dwc showWindow:nil];
+}
+
+- (IBAction) lineDensityHistorgram:(id)sender
+{
+    if ( !imageProcessing )
+    {
+        imageProcessing = [[ImageProcessing alloc] init];
+    }
+    
+    if ( !imageAnalysis )
+    {
+        imageAnalysis = [[ImageAnalysis alloc] init];
+    }
+    
+    int height = representation.subject.size.height;
+    int* areaDensity = [imageAnalysis pixelAreaDensityOfImage:representation.subject];
+    int maxDensity = [IntArrayUtil maxFromArray:areaDensity ofSize:height];
+
+    NSBitmapImageRep* areaDensityHistogramRep = [imageAnalysis histogramRepresentationOfData:areaDensity
+                                                                                   withWidth:maxDensity
+                                                                                   andHeight:height];
+    
+    [ImageRepresentation saveImageFileFromRepresentation:areaDensityHistogramRep fileName:@"area"];
+}
+
+- (IBAction) greylevelHistogram:(id)sender
+{
+    
+    if ( !imageProcessing )
+    {
+        imageProcessing = [[ImageProcessing alloc] init];
+    }
+    
+    if ( !imageAnalysis )
+    {
+        imageAnalysis = [[ImageAnalysis alloc] init];
+    }
+    
+    int* contrast = [imageProcessing contrastHistogramOfImage:representation.subject];
+    contrast = [imageProcessing normaliseConstrastHistogramData:contrast ofSize:256];
+    int maxValue = [IntArrayUtil maxFromArray:contrast ofSize:256];
+    
+    NSBitmapImageRep* contrastHistogram = [imageAnalysis histogramRepresentationOfData:contrast
+                                                                                   withWidth:maxValue
+                                                                                   andHeight:256];
+    
+    [ImageRepresentation saveImageFileFromRepresentation:contrastHistogram fileName:@"contrast"];
 }
 
 

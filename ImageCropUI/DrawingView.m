@@ -43,7 +43,7 @@
     NSRect frameRect = [self bounds];
     NSAffineTransform* flip = [NSAffineTransform transform];
     [flip translateXBy:0.0 yBy:frameRect.size.height];
-    [flip scaleXBy:3.0 yBy:-3.0];
+    [flip scaleXBy:1.0 yBy:-1.0];
     [flip concat];
     
     NSColor* fillColor = [NSColor colorWithCalibratedRed: 0 green: 0 blue: 0 alpha: 1];

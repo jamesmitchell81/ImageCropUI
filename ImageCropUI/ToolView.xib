@@ -24,14 +24,14 @@
         <window title="Tools" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="8SU-WB-JiF" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" HUD="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="116" width="365" height="649"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="768"/>
+            <rect key="contentRect" x="196" y="116" width="365" height="710"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
             <view key="contentView" id="brm-AD-Dim">
-                <rect key="frame" x="0.0" y="0.0" width="365" height="649"/>
+                <rect key="frame" x="0.0" y="0.0" width="365" height="710"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="soW-iJ-YyS">
-                        <rect key="frame" x="30" y="612" width="109" height="17"/>
+                        <rect key="frame" x="30" y="673" width="109" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Averaging Filter" id="cN5-DJ-B64">
                             <font key="font" metaFont="system"/>
@@ -40,7 +40,7 @@
                         </textFieldCell>
                     </textField>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a2z-re-GMj">
-                        <rect key="frame" x="169" y="604" width="168" height="27"/>
+                        <rect key="frame" x="169" y="665" width="168" height="27"/>
                         <animations/>
                         <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="tfi-gI-wjR"/>
                         <connections>
@@ -48,7 +48,7 @@
                         </connections>
                     </slider>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOQ-Ty-k6v">
-                        <rect key="frame" x="169" y="565" width="168" height="27"/>
+                        <rect key="frame" x="169" y="626" width="168" height="27"/>
                         <animations/>
                         <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="35p-fi-qle"/>
                         <connections>
@@ -56,7 +56,7 @@
                         </connections>
                     </slider>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fTE-uo-tyh">
-                        <rect key="frame" x="30" y="573" width="109" height="17"/>
+                        <rect key="frame" x="30" y="634" width="109" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Median Filter" id="pm0-EH-bln">
                             <font key="font" metaFont="system"/>
@@ -65,7 +65,7 @@
                         </textFieldCell>
                     </textField>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enh-Z0-anX">
-                        <rect key="frame" x="169" y="525" width="168" height="27"/>
+                        <rect key="frame" x="169" y="586" width="168" height="27"/>
                         <animations/>
                         <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="a95-Vi-JEt"/>
                         <connections>
@@ -73,7 +73,7 @@
                         </connections>
                     </slider>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUD-yb-099">
-                        <rect key="frame" x="169" y="482" width="168" height="27"/>
+                        <rect key="frame" x="169" y="543" width="168" height="27"/>
                         <animations/>
                         <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="9" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="byG-lT-qmQ"/>
                         <connections>
@@ -81,7 +81,7 @@
                         </connections>
                     </slider>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W71-Do-B4x">
-                        <rect key="frame" x="32" y="534" width="109" height="17"/>
+                        <rect key="frame" x="32" y="595" width="109" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Min Filter" id="mdu-eS-1WI">
                             <font key="font" metaFont="system"/>
@@ -90,14 +90,14 @@
                         </textFieldCell>
                     </textField>
                     <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Zoe-2t-oxg">
-                        <rect key="frame" x="20" y="456" width="325" height="5"/>
+                        <rect key="frame" x="20" y="517" width="325" height="5"/>
                         <animations/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nNs-WA-fIT">
-                        <rect key="frame" x="30" y="424" width="84" height="17"/>
+                        <rect key="frame" x="30" y="485" width="84" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Thresholding" id="Sgi-69-KFf">
                             <font key="font" metaFont="system"/>
@@ -106,14 +106,14 @@
                         </textFieldCell>
                     </textField>
                     <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Dof-X8-NoW">
-                        <rect key="frame" x="20" y="402" width="325" height="5"/>
+                        <rect key="frame" x="20" y="463" width="325" height="5"/>
                         <animations/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MtG-4l-2oc">
-                        <rect key="frame" x="30" y="368" width="40" height="17"/>
+                        <rect key="frame" x="30" y="429" width="40" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Erode" id="C2i-6V-cHu">
                             <font key="font" metaFont="system"/>
@@ -122,7 +122,7 @@
                         </textFieldCell>
                     </textField>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tEf-hn-BIL">
-                        <rect key="frame" x="169" y="315" width="168" height="27"/>
+                        <rect key="frame" x="169" y="376" width="168" height="27"/>
                         <animations/>
                         <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="10" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="E5z-iR-VSK"/>
                         <connections>
@@ -130,7 +130,7 @@
                         </connections>
                     </slider>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqd-0R-JOl">
-                        <rect key="frame" x="30" y="323" width="39" height="17"/>
+                        <rect key="frame" x="30" y="384" width="39" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Dilate" id="dU0-1f-L3P">
                             <font key="font" metaFont="system"/>
@@ -139,7 +139,7 @@
                         </textFieldCell>
                     </textField>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SLl-XR-7T1">
-                        <rect key="frame" x="169" y="269" width="168" height="27"/>
+                        <rect key="frame" x="169" y="330" width="168" height="27"/>
                         <animations/>
                         <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="5" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="qeA-OW-jPp"/>
                         <connections>
@@ -147,7 +147,7 @@
                         </connections>
                     </slider>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiT-fF-Kj5">
-                        <rect key="frame" x="30" y="277" width="37" height="17"/>
+                        <rect key="frame" x="30" y="338" width="37" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Open" id="s9e-EF-ftA">
                             <font key="font" metaFont="system"/>
@@ -156,7 +156,7 @@
                         </textFieldCell>
                     </textField>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCi-8K-ocy">
-                        <rect key="frame" x="169" y="225" width="168" height="27"/>
+                        <rect key="frame" x="169" y="286" width="168" height="27"/>
                         <animations/>
                         <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="5" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="5" allowsTickMarkValuesOnly="YES" sliderType="linear" id="xfx-xz-F4O"/>
                         <connections>
@@ -164,7 +164,7 @@
                         </connections>
                     </slider>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3KP-o9-G0C">
-                        <rect key="frame" x="31" y="233" width="39" height="17"/>
+                        <rect key="frame" x="31" y="294" width="39" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Close" id="vLJ-iy-o7L">
                             <font key="font" metaFont="system"/>
@@ -173,25 +173,21 @@
                         </textFieldCell>
                     </textField>
                     <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="wM3-rS-jZp">
-                        <rect key="frame" x="20" y="202" width="325" height="5"/>
+                        <rect key="frame" x="20" y="263" width="325" height="5"/>
                         <animations/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXA-jc-MGC">
-                        <rect key="frame" x="194" y="146" width="118" height="32"/>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="yH2-sc-bXF">
+                        <rect key="frame" x="18" y="148" width="325" height="5"/>
                         <animations/>
-                        <buttonCell key="cell" type="push" title="Thin" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zQj-k3-dFa">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="thin:" target="-2" id="ePo-El-aAs"/>
-                        </connections>
-                    </button>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SgR-ap-svj">
-                        <rect key="frame" x="169" y="419" width="168" height="27"/>
+                        <rect key="frame" x="169" y="480" width="168" height="27"/>
                         <animations/>
                         <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="255" doubleValue="128" tickMarkPosition="below" numberOfTickMarks="15" sliderType="linear" id="8JY-rc-fXt"/>
                         <connections>
@@ -199,7 +195,7 @@
                         </connections>
                     </slider>
                     <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gCy-cJ-jHh">
-                        <rect key="frame" x="194" y="38" width="118" height="32"/>
+                        <rect key="frame" x="258" y="0.0" width="104" height="32"/>
                         <animations/>
                         <buttonCell key="cell" type="push" title="Reset Image" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="F1U-UY-Ob2">
                             <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
@@ -209,19 +205,8 @@
                             <action selector="resetImage:" target="-2" id="0kI-fG-NNp"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QlH-Qu-urB">
-                        <rect key="frame" x="38" y="146" width="118" height="32"/>
-                        <animations/>
-                        <buttonCell key="cell" type="push" title="Switch Polarity" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hTQ-h9-vkd">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="switchPolarity:" target="-2" id="4BF-5v-azJ"/>
-                        </connections>
-                    </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cGM-bg-9QM">
-                        <rect key="frame" x="31" y="490" width="109" height="17"/>
+                        <rect key="frame" x="31" y="551" width="109" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Max Filter" id="WLJ-bV-Hlj">
                             <font key="font" metaFont="system"/>
@@ -230,7 +215,7 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7nD-8Q-2pZ">
-                        <rect key="frame" x="0.0" y="-1" width="118" height="32"/>
+                        <rect key="frame" x="0.0" y="0.0" width="118" height="32"/>
                         <animations/>
                         <buttonCell key="cell" type="push" title="Pin" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lia-6A-rA8">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -240,8 +225,60 @@
                             <action selector="pinCurrent:" target="-2" id="vup-2t-fWn"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zSw-zM-tdi">
+                        <rect key="frame" x="76" y="96" width="208" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Line Density Histogram" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SUq-Ys-Xjz">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="lineDensityHistorgram:" target="-2" id="z2r-gA-3A1"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Lx-7F-Kte">
+                        <rect key="frame" x="76" y="60" width="208" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Grey level Histogram" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="94y-9r-ivx">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="pinCurrent:" target="-2" id="FnR-Ko-TeA"/>
+                        </connections>
+                    </button>
+                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hp2-gZ-9Wc">
+                        <rect key="frame" x="169" y="423" width="173" height="27"/>
+                        <animations/>
+                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="10" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="s9X-AP-VcJ"/>
+                        <connections>
+                            <action selector="erode:" target="-2" id="eOf-3i-Q1d"/>
+                        </connections>
+                    </slider>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXA-jc-MGC">
+                        <rect key="frame" x="195" y="202" width="118" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Thin" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zQj-k3-dFa">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="thin:" target="-2" id="ePo-El-aAs"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QlH-Qu-urB">
+                        <rect key="frame" x="52" y="202" width="118" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Switch Polarity" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hTQ-h9-vkd">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="switchPolarity:" target="-2" id="4BF-5v-azJ"/>
+                        </connections>
+                    </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wKe-Yw-hC0">
-                        <rect key="frame" x="194" y="93" width="118" height="32"/>
+                        <rect key="frame" x="195" y="169" width="118" height="32"/>
                         <animations/>
                         <buttonCell key="cell" type="push" title="Trace" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="x59-OA-kbY">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -252,7 +289,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-6t-EnX">
-                        <rect key="frame" x="38" y="93" width="118" height="32"/>
+                        <rect key="frame" x="52" y="169" width="118" height="32"/>
                         <animations/>
                         <buttonCell key="cell" type="push" title="Crop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4R8-Q1-Pdr">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
@@ -262,18 +299,10 @@
                             <action selector="crop:" target="-2" id="njT-5y-H2e"/>
                         </connections>
                     </button>
-                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hp2-gZ-9Wc">
-                        <rect key="frame" x="169" y="362" width="173" height="27"/>
-                        <animations/>
-                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="10" doubleValue="1" tickMarkPosition="below" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="s9X-AP-VcJ"/>
-                        <connections>
-                            <action selector="erode:" target="-2" id="eOf-3i-Q1d"/>
-                        </connections>
-                    </slider>
                 </subviews>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="-92.5" y="2.5"/>
+            <point key="canvasLocation" x="-564.5" y="-128"/>
         </window>
     </objects>
 </document>
