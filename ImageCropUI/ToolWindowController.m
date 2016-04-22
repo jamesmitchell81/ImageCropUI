@@ -157,10 +157,6 @@
     [representation.subject removeRepresentation:oldRep];
     [representation.subject addRepresentation:newRep];
     [representation setCurrent:representation.subject];
-    
-    oldRep = [representation.thresholded.representations objectAtIndex:0];
-    [representation.thresholded removeRepresentation:oldRep];
-    [representation.thresholded addRepresentation:newRep];
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageUpdateReciever" object:self];
 }
