@@ -64,11 +64,7 @@
 {
     // Apple Docs[https://developer.apple.com/library/mac/samplecode/CocoaDragAndDrop/Listings/CocoaDragAndDrop_DragDropImageView_m.html]
     // Only interested in a sender that can create an image
-    BOOL correct = [NSImage canInitWithPasteboard: [sender draggingPasteboard]];
-    
-    NSLog(correct ? @"YES" : @"NO");
-    
-    return correct;
+    return [NSImage canInitWithPasteboard: [sender draggingPasteboard]];
 }
 
 // Handles drop data.
